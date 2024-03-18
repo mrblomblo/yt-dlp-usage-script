@@ -1,5 +1,12 @@
 @echo OFF
 
+SETLOCAL EnableDelayedExpansion
+
+set N=^
+set CONTENT=
+
+for /f "delims=" %%x in ('type %~dp0EXE\VARS.txt') do set "CONTENT=!CONTENT!%%x!N!"
+
 title Enter URL to Download
 
 set /p URL=URL: 
@@ -16,11 +23,11 @@ title Downloading...
 
 %~dp0EXE\yt-dlp.exe -U
 
-if %format%==a %~dp0EXE\yt-dlp.exe -P %~dp0Downloads\Audio -f "140" -x --audio-format "mp3" -S acodec:opus --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w %URL% && @echo %date%: Audio - %URL%>>%~dp0log.txt
+if %format%==a %~dp0EXE\yt-dlp.exe -P %~dp0Downloads\Audio %aargs% -f "140" -x --audio-format "mp3" -S acodec:%acodec% --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w %URL% && @echo %date%: Audio - %URL%>>%~dp0log.txt
 
-if %format%==v %~dp0EXE\yt-dlp.exe -P %~dp0Downloads\Video -f "bv[ext=mp4]+ba[ext=m4a]/b[ext=mp4]/b" --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w %URL% && @echo %date%: Video - %URL%>>%~dp0log.txt
+if %format%==v %~dp0EXE\yt-dlp.exe -P %~dp0Downloads\Video %vargs% -f "bv[ext=mp4]+ba[ext=m4a]/b[ext=mp4]/b" --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w %URL% && @echo %date%: Video - %URL%>>%~dp0log.txt
 
-if %format%==m %~dp0EXE\yt-dlp.exe -P %~dp0Downloads\Music --sponsorblock-remove "music_offtopic" --ppa "ffmpeg:-c:v mjpeg -vf crop=\"'if(gt(ih,iw),iw,ih)':'if(gt(iw,ih),ih,iw)'\"" -f "140" -x --audio-format "flac" -S acodec:opus --embed-metadata --embed-thumbnail --convert-thumbnails "jpg" --ppa "thumbnailsconvertor:-qmin 1 -q:v 1" -o "%%(uploader)s - %%(title)s.%%(ext)s" -w %URL% && @echo %date%: Music - %URL%>>%~dp0log.txt
+if %format%==m %~dp0EXE\yt-dlp.exe -P %~dp0Downloads\Music %margs% --sponsorblock-remove "music_offtopic" --ppa "ffmpeg:-c:v mjpeg -vf crop=\"'if(gt(ih,iw),iw,ih)':'if(gt(iw,ih),ih,iw)'\"" -f "140" -x --audio-format "flac" -S acodec:opus --embed-metadata --embed-thumbnail --convert-thumbnails "jpg" --ppa "thumbnailsconvertor:-qmin 1 -q:v 1" -o "%%(uploader)s - %%(title)s.%%(ext)s" -w %URL% && @echo %date%: Music - %URL%>>%~dp0log.txt
 
 cls
 
@@ -40,4 +47,5 @@ if %format%==m explorer %~dp0Downloads\Music
 if %format%==a explorer %~dp0Downloads\Audio
 if %format%==v explorer %~dp0Downloads\Video
 
+ENDLOCAL
 exit
