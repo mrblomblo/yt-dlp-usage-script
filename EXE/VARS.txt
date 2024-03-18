@@ -1,0 +1,16 @@
+REM Set your variables here!
+REM you can find args here: https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#usage-and-options
+
+REM Audio codec for mp3 (not FLAC) DEFAULT: opus
+set acodec=opus
+
+REM Additional args below,
+
+REM Audio (a) args
+set aargs=
+
+REM Video (v) args
+set vargs=
+
+REM Music (m) args
+set margs=
