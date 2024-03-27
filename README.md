@@ -39,5 +39,7 @@ Please only change these if you know what you are doing! I cannot guarantee that
 NOTE: The FLAC files that get downloaded with this script are modt likely not gonna be "true" FLACs (re-encoded from a lossy format to FLAC =/= lossless audio).
 It may just be a placebo, but it does however sound marginally better than the regular mp3 file that you get from the script.
 
-#### Credits:
-##### * Loading the *VARS.txt* file in to the *run.bat* file - https://stackoverflow.com/a/66714820
+
+### Credits
+* Loading the *VARS.txt* file in to the *run.bat* file - https://stackoverflow.com/a/66714820
+* Most of the args used for the music command - [YTDLnis](https://github.com/deniscerri/ytdlnis)
