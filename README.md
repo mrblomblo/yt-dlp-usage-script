@@ -26,11 +26,11 @@ This script is made to make usage of YT-DLP easier. It is based on v1, which req
 ### Customization
 If you want to customize the script (mainly by changing the codecs & adding custom args), you have to edit the *VARS.txt* file. there you will see these variables:
 * set acodec=mp3
-* set vcodec=h264 
-* set mcodec=flac 
-* set aargs= 
-* set vargs= 
-* set margs= 
+* set vcodec=h264
+* set mcodec=flac
+* set aargs=--embed-chapters --write-sub --write-auto-sub
+* set vargs=--embed-chapters --write-sub --write-auto-sub
+* set margs=
 
 The first three are for the codecs the script uses when downloading the content. The last three are extra args for YT-DLP to use when downloading the content.
 Please only change these if you know what you are doing! I cannot guarantee that I will be able to give support if something goes wrong and you've changed these.
