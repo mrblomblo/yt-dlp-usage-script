@@ -1,4 +1,4 @@
-# YT-DLP Easy Usage Script by Blomblo
+# YT-DLP Easy Usage Script
 This script is made to make usage of YT-DLP easier. It is based on v1, which required much more manual setup and had less options. This new version is much easier to setup and use as it requires no configuration of the *run.bat* file, along with the new music option, and better compatibility with editing software by using more common codecs and formats. 
 
 ### SETUP (Windows)
