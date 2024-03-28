@@ -36,7 +36,7 @@ The first three are for the codecs the script uses when downloading the content.
 Please only change these if you know what you are doing! I cannot guarantee that I will be able to give support if something goes wrong and you've changed these.
 
 
-NOTE: The FLAC files that get downloaded with this script are modt likely not gonna be "true" FLACs (re-encoded from a lossy format to FLAC =/= lossless audio).
+NOTE: The FLAC files that get downloaded with this script are most likely not gonna be "true" FLACs (re-encoded from a lossy format to FLAC =/= lossless audio).
 It may just be a placebo, but it does however sound marginally better than the regular mp3 file that you get from the script.
 
 
