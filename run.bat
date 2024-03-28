@@ -7,6 +7,7 @@ for /f "delims=" %%x in ('type %~dp0EXE\VARS.txt') do set "CONTENT=!CONTENT!%%x!
 
 title Dependency check
 
+if not exist "%~dp0EXE" mkdir %~dp0EXE && echo EXE folder not found, so I created it for you.
 if not exist "%~dp0Downloads" mkdir %~dp0Downloads && echo Downloads folder not found, so I created it for you.
 if not exist "%~dp0Downloads\Audio" mkdir %~dp0Downloads\Audio && echo Audio downloads folder not found, so I created it for you.
 if not exist "%~dp0Downloads\Video" mkdir %~dp0Downloads\Video && echo Video downloads folder not found, so I created it for you.
