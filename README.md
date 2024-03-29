@@ -5,14 +5,26 @@ This script is made to make usage of YT-DLP easier. It is based on [version 1](h
 1. Create a folder and name it whatever you want, this is where all of the files will be. (From now on I'll call it the main folder)
 2. Download the *run.bat* file from this project and place it in the main folder.
 3. Run the *run.bat* file. You will see that the script has created five folders, **EXE**, **Downloads** and **Audio**, **Video** & **Music** in the **Downloads** folder.
-4. Download the *VARS.txt* file from the **EXE** folder in this project and place it in your **EXE** folder.
-5. Download the latest [YT-DLP FFmpeg build](https://github.com/yt-dlp/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip) and the latest [YT-DLP](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe) versions.
-6. Unzip the FFmpeg ZIP file, then go in to **bin** and move the three files to the **EXE** folder you made earlier. Now you can delete the FFmpeg folder and the ZIP that you downloaded (The one named *ffmpeg-master-latest-win64-gpl*).
-7. Move the *yt-dlp.exe* file to the **EXE** folder that you made earlier.
-8. Create three folders in the **Downloads** folder, **Audio**, **Video** and **Music**. It is very important that you name the folders exactly like that, otherwise the script won't work.
-9. Create a text file called *log.txt* (not *log.txt.txt*) in the main folder.
-10. Make sure that your main folder and subfolders along with the files, (except the example files, they are only there so that I could upload the folders), match the ones that I provided in this project (**EXE** and **Downloads** along with the three folders in the *Downloads* folder). 
-11. Done, now you can try it out!
+4. Download the *VARS.txt* file and place it in your **EXE** folder.
+5. Download the latest [YT-DLP FFmpeg build](https://github.com/yt-dlp/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip) and the latest [YT-DLP](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe) versions. (These links auto-download the latest versions)
+6. Unzip the FFmpeg ZIP file, then go in to **bin** and move the three files to the **EXE** folder. Now you can delete the FFmpeg folder and the ZIP that you downloaded (The one named *ffmpeg-master-latest-win64-gpl*).
+7. Move the *yt-dlp.exe* file to the **EXE** folder that the script created earlier.
+8. Create a text file called *log.txt* (not *log.txt.txt*) in the main folder. ([Check the wiki](https://github.com/mrblomblo/yt-dlp-usage-script/wiki/How-to-show-file-extensions-on-Windows-10-&-11) for how to see extensions so that you don't accidentally use double-extensions)
+9. Make sure that your folders and files match the photos below:
+
+ ![image](https://github.com/mrblomblo/yt-dlp-usage-script/assets/63555404/942dfc46-6505-4449-ab0e-a4b07d3b6149)
+
+ ^^ Main folder
+
+ ![image](https://github.com/mrblomblo/yt-dlp-usage-script/assets/63555404/7a71e4bd-4552-49a6-aa84-b891f731d285)
+
+ ^^ EXE folder
+
+ ![image](https://github.com/mrblomblo/yt-dlp-usage-script/assets/63555404/4f21140c-5d9b-4fca-96dc-bfb61334a100)
+
+ ^^ Downloads folder
+
+10. Done, now you can try it out!
  
 ### Usage
 1. Run the script.
@@ -35,7 +47,7 @@ This script is made to make usage of YT-DLP easier. It is based on [version 1](h
 * Easy customization with YT-DLP CLI args in VARS.txt *see below*
 
 ### Customization
-If you want to customize the script (mainly by changing the codecs & adding custom args), you have to edit the *VARS.txt* file. there you will see these variables:
+If you want to customize the script (mainly by changing the codecs & adding custom args), you can edit the *VARS.txt* file. There you will see these variables:
 * set skipintro=n [this currently does nothing, but it will when or if an intro gets added]
 * set acodec=mp3
 * set vcodec=h264
