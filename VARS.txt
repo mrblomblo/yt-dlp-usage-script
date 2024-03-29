@@ -1,0 +1,28 @@
+REM Set your variables here!
+REM you can find args here: https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#usage-and-options
+REM [DO NOT USE A SPACE BETWEEN THE "=" AND THE ARG!] 
+
+REM Change to "y" to skip the short intro DEFAULT: n
+set skipintro=n
+
+REM Audio codec for audio (not music) DEFAULT: mp3
+set acodec=mp3
+
+REM Video codec DEFAULT: h264
+set vcodec=h264
+
+REM Music codec DEFAULT: flac
+set mcodec=flac
+
+
+REM Additional args below, CHECK THE run.bat SO THAT YOU DON'T USE ONE THAT IS ALREADY BEING USED!
+REM I have included some example args that you may want to use.
+
+REM Extra Audio (a) args
+set aargs=--embed-chapters --write-sub --write-auto-sub
+
+REM Extra Video (v) args
+set vargs=--embed-chapters --write-sub --write-auto-sub
+
+REM Extra Music (m) args
+set margs=
