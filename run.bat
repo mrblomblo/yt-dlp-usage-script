@@ -21,7 +21,21 @@ if not exist "%~dp0EXE\ffmpeg.exe" echo Error: ffmpeg.exe not found, please plac
 
 title Enter URL to Download
 
+:s
+
 set /p URL=URL: 
+
+IF "%URL%"=="" (
+  echo You must enter a URL!
+  goto s
+)
+
+IF NOT "%URL:~0,4%"=="http" IF NOT "%URL:~0,5%"=="https" (
+  IF NOT "%URL:~0,4%"=="www." (  
+    echo Invalid URL format. Please use http://, https://, or www.
+    goto s
+  )
+)
 
 cls
 
@@ -36,7 +50,6 @@ cls
 if %format%==a goto d
 if %format%==v goto d
 if %format%==m goto d
-
 echo Error: Invalid format. Please enter MP3, MP4, or FLAC. && goto a
 
 :d
@@ -46,23 +59,21 @@ cls
 title Downloading...
 
 %~dp0EXE\yt-dlp.exe -U
-
 if %format%==a %~dp0EXE\yt-dlp.exe -P %~dp0Downloads\Audio %aargs% -f "140" -x --audio-format "mp3" -S acodec:%acodec% --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w %URL% && @echo %date%: Audio - %URL%>>%~dp0log.txt
-
 if %format%==v %~dp0EXE\yt-dlp.exe -P %~dp0Downloads\Video %vargs% -f "bv[ext=mp4]+ba[ext=m4a]/b[ext=mp4]/b" -S vcodec:%vcodec% --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w %URL% && @echo %date%: Video - %URL%>>%~dp0log.txt
-
 if %format%==m %~dp0EXE\yt-dlp.exe -P %~dp0Downloads\Music %margs% --sponsorblock-remove "music_offtopic" --ppa "ffmpeg:-c:v mjpeg -vf crop=\"'if(gt(ih,iw),iw,ih)':'if(gt(iw,ih),ih,iw)'\"" -f "140" -x --audio-format "flac" -S acodec:%mcodec% --embed-metadata --embed-thumbnail --convert-thumbnails "jpg" --ppa "thumbnailsconvertor:-qmin 1 -q:v 1" -o "%%(uploader)s - %%(title)s.%%(ext)s" -w %URL% && @echo %date%: Music - %URL%>>%~dp0log.txt
-
 
 cls
 
 title Download more?
 
+:l
+
 set /p more=Do you want to download more? Yes (y) or No (n): 
 
 if %more%==y start run.bat && exit
-
 if %more%==n goto b
+echo Error: Invalid input, please choose either Yes (y) or No (n) && goto l
 
 :e
 title Dependency check
