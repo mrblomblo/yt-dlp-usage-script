@@ -27,9 +27,9 @@ if "%skipintro%"=="y" goto s
 
 REM (Intro code goes here when I have gotten permission to use it or if I write it myself)
 
-:s
-
 cls
+
+:s
 
 title Enter URL to Download
 
@@ -68,7 +68,6 @@ cls
 
 title Downloading...
 
-%~dp0EXE\yt-dlp.exe -U
 if %format%==a %~dp0EXE\yt-dlp.exe -P %~dp0Downloads\Audio %aargs% -f "140" -x --audio-format "mp3" -S acodec:%acodec% --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w %URL% && @echo %date%: Audio - %URL%>>%~dp0log.txt
 if %format%==v %~dp0EXE\yt-dlp.exe -P %~dp0Downloads\Video %vargs% -f "bv[ext=mp4]+ba[ext=m4a]/b[ext=mp4]/b" -S vcodec:%vcodec% --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w %URL% && @echo %date%: Video - %URL%>>%~dp0log.txt
 if %format%==m %~dp0EXE\yt-dlp.exe -P %~dp0Downloads\Music %margs% --sponsorblock-remove "music_offtopic" --ppa "ffmpeg:-c:v mjpeg -vf crop=\"'if(gt(ih,iw),iw,ih)':'if(gt(iw,ih),ih,iw)'\"" -f "140" -x --audio-format "flac" -S acodec:%mcodec% --embed-metadata --embed-thumbnail --convert-thumbnails "jpg" --ppa "thumbnailsconvertor:-qmin 1 -q:v 1" -o "%%(uploader)s - %%(title)s.%%(ext)s" -w %URL% && @echo %date%: Music - %URL%>>%~dp0log.txt
