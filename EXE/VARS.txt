@@ -15,7 +15,8 @@ REM Music codec DEFAULT: flac
 set mcodec=flac
 
 
-REM Additional args below, CHECK THE run.bat SO THAT YOU DON'T USE ONE THAT IS ALREADY BEING USED! (I have included some example args that you may want as well)
+REM Additional args below, CHECK THE run.bat SO THAT YOU DON'T USE ONE THAT IS ALREADY BEING USED!
+REM I have included some example args that you may want to use.
 
 REM Extra Audio (a) args
 set aargs=--embed-chapters --write-sub --write-auto-sub
