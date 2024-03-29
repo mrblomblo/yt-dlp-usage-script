@@ -44,6 +44,7 @@ This script is made to make usage of YT-DLP easier. It is based on [version 1](h
 * Detection of missing dependencies *(see photo below)*
 
 ![image](https://github.com/mrblomblo/yt-dlp-usage-script/assets/63555404/01ff747c-0fb3-4870-9c33-03aad84007e6)
+* Detection of invalid URL format & Detection of invalid user inputs
 * Easy customization with YT-DLP CLI args in VARS.txt *see below*
 
 ### Customization
