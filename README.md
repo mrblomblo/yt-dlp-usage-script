@@ -55,6 +55,7 @@ It does however sound marginally better than the regular mp3 file that you get f
 This script is a wrapper for YT-DLP, a command-line tool for downloading videos. What you do with the downloaded content is up to you, but please use it responsibly and legally. Downloading copyrighted content without permission is illegal.
 This script is intended for personal use, and for downloading content that is freely available online. I am not responsible for any misuse of this script or the downloaded content.
 This script is provided "as is" without warranty of any kind.
+This script is licensed under the Unlicense license, so I don't expect you to follow this. But for moral reasons; please don't steal my script and turn it into malware or anything like that. Though, as the license states, you are free to do whatever you want with it.
  
  
 ### Credits
