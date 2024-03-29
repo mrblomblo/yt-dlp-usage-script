@@ -7,21 +7,31 @@ for /f "delims=" %%x in ('type %~dp0EXE\VARS.txt') do set "CONTENT=!CONTENT!%%x!
 
 title Dependency check
 
-if not exist "%~dp0EXE" mkdir %~dp0EXE && echo EXE folder not found, so I created it for you.
-if not exist "%~dp0Downloads" mkdir %~dp0Downloads && echo Downloads folder not found, so I created it for you.
-if not exist "%~dp0Downloads\Audio" mkdir %~dp0Downloads\Audio && echo Audio downloads folder not found, so I created it for you.
-if not exist "%~dp0Downloads\Video" mkdir %~dp0Downloads\Video && echo Video downloads folder not found, so I created it for you.
-if not exist "%~dp0Downloads\Music" mkdir %~dp0Downloads\Music && echo Music downloads folder not found, so I created it for you.
-if not exist "%~dp0EXE\VARS.txt" echo Error: VARS.txt not found, please place it in the EXE folder or download it. && goto e
-if not exist "%~dp0EXE\yt-dlp.exe" echo Error: yt-dlp.exe not found, please place it in the EXE folder or download it. && goto e
-if not exist "%~dp0EXE\ffplay.exe" echo Error: ffplay.exe not found, please place it in the EXE folder or download it. && goto e
-if not exist "%~dp0EXE\ffprobe.exe" echo Error: ffprobe.exe not found, please place it in the EXE folder or download it. && goto e
-if not exist "%~dp0EXE\ffmpeg.exe" echo Error: ffmpeg.exe not found, please place it in the EXE folder or download it. && goto e
+for %%d in (EXE Downloads Downloads\Audio Downloads\Video Downloads\Music) do (
+  if not exist "%~dp0%%d" (
+    mkdir "%~dp0%%d"
+    echo %%~nd folder not found, so I created it for you.
+  )
+)
 
+for %%f in (VARS.txt yt-dlp.exe ffplay.exe ffprobe.exe ffmpeg.exe) do (
+  if not exist "%~dp0EXE\%%f" (
+    echo Error: %%f not found, please place it in the EXE folder or download it.
+    goto e
+  )
+)
 
-title Enter URL to Download
+title intro
+
+if "%skipintro%"=="y" goto s
+
+REM (Intro code goes here when I have gotten permission to use it or if I write it myself)
 
 :s
+
+cls
+
+title Enter URL to Download
 
 set /p URL=URL: 
 
@@ -31,7 +41,7 @@ IF "%URL%"=="" (
 )
 
 IF NOT "%URL:~0,4%"=="http" IF NOT "%URL:~0,5%"=="https" (
-  IF NOT "%URL:~0,4%"=="www." (  
+  IF NOT "%URL:~0,4%"=="www" (  
     echo Invalid URL format. Please use http://, https://, or www.
     goto s
   )
@@ -50,7 +60,7 @@ cls
 if %format%==a goto d
 if %format%==v goto d
 if %format%==m goto d
-echo Error: Invalid format. Please enter MP3, MP4, or FLAC. && goto a
+echo Error: Invalid format. Please enter MP3 (a), MP4 (v), or FLAC (m). && goto a
 
 :d
 
