@@ -1,6 +1,6 @@
 # YT-DLP Easy Usage Script
-This script is made to make usage of YT-DLP easier. It is based on v1, which required much more manual setup and had less options. This new version is much easier to setup and use as it requires no configuration of the *run.bat* file, along with the new music option, and better compatibility with editing software by using more common codecs and formats. 
-
+This script is made to make usage of YT-DLP easier. It is based on [version 1](https://www.youtube.com/watch?v=HpAnrQbZoC4), which required a much more difficult setup, and had less options. This new version is much easier to setup and use as it requires no configuration of the *run.bat* file, along with the new music option, and better compatibility with editing software by using more common codecs and formats.
+ 
 ### SETUP (Windows)
 1. Create a folder and name it whatever you want, this is where all of the files will be. (From now on I'll call it the main folder)
 2. Download the *run.bat* file from this project and place it in the main folder.
@@ -13,15 +13,26 @@ This script is made to make usage of YT-DLP easier. It is based on v1, which req
 9. Create a text file called *log.txt* (not *log.txt.txt*) in the main folder.
 10. Make sure that your main folder and subfolders along with the files, (except the example files, they are only there so that I could upload the folders), match the ones that I provided in this project (**EXE** and **Downloads** along with the three folders in the *Downloads* folder). 
 11. Done, now you can try it out!
-
+ 
 ### Usage
 1. Run the script.
 2. Input the URL of the video or audio that you wish to download.
-3. Select either audio (mp3) with "a", video (mp4) with "v", or music (flac) with "m".
+3. Select either audio (mp3) with "a", video (mp4) with "v", or music (FLAC) with "m".
 4. The script should now start downloading the video or audio.
 5. If you want to download more type "y", otherwise type "n".
 6. If you wanted to download more, the script will restart, and you will be prompted for the URL. If you didn't want to download more, the script will shut down and the folder that your latest download type was will open.
-7. What you do with the downloaded content is up to you, but please use it responsibly and not in an illegal way.
+ 
+### Features
+* Audio downloads (mp3) *(see photo below)*
+* Video downloads (mp4) *(see photo below)*
+* Music downloads (FLAC) *(see photo below)*
+
+![image](https://github.com/mrblomblo/yt-dlp-usage-script/assets/63555404/e65f116e-83fb-44e3-9463-f17ffe302d82)
+* Semi-automatic setup (automatic creation of folders and log file) *(see photo below)*
+* Detection of missing dependencies *(see photo below)*
+
+![image](https://github.com/mrblomblo/yt-dlp-usage-script/assets/63555404/01ff747c-0fb3-4870-9c33-03aad84007e6)
+* Easy customization with YT-DLP CLI args in VARS.txt *see below*
 
 ### Customization
 If you want to customize the script (mainly by changing the codecs & adding custom args), you have to edit the *VARS.txt* file. there you will see these variables:
@@ -31,15 +42,21 @@ If you want to customize the script (mainly by changing the codecs & adding cust
 * set aargs=--embed-chapters --write-sub --write-auto-sub
 * set vargs=--embed-chapters --write-sub --write-auto-sub
 * set margs=
-
+ 
 The first three are for the codecs the script uses when downloading the content. The last three are extra args for YT-DLP to use when downloading the content.
 Please only change these if you know what you are doing! I cannot guarantee that I will be able to give support if something goes wrong and you've changed these.
-
-
-NOTE: The FLAC files that get downloaded with this script are most likely not gonna be "true" FLACs (re-encoded from a lossy format to FLAC =/= lossless audio).
-It may just be a placebo, but it does however sound marginally better than the regular mp3 file that you get from the script.
-
-
+ 
+ 
+**NOTE:** The FLAC files that get downloaded with this script are most likely not going to be "true" FLACs (re-encoded from a lossy format to FLAC =/= lossless audio).
+It does however sound marginally better than the regular mp3 file that you get from the script, but that may just be a placebo.
+ 
+### Disclaimer
+This script is a wrapper for YT-DLP, a command-line tool for downloading videos. What you do with the downloaded content is up to you, but please use it responsibly and legally. Downloading copyrighted content without permission is illegal.
+This script is intended for personal use, and for downloading content that is freely available online. I am not responsible for any misuse of this script or the downloaded content.
+This script is provided "as is" without warranty of any kind.
+ 
+ 
 ### Credits
-* Loading the *VARS.txt* file in to the *run.bat* file - https://stackoverflow.com/a/66714820
+* Loading the *VARS.txt* file in to the *run.bat* file - [https://stackoverflow.com/a/66714820](https://stackoverflow.com/a/66714820)
 * Most of the args used for the music command - [YTDLnis](https://github.com/deniscerri/ytdlnis)
+* URL check - [Google Gemini](https://gemini.google.com)
