@@ -97,7 +97,7 @@ set /p more=Do you want to download more? Yes (y) or No (n):
 REM Restarts the script if the user chose yes (y), otherwise goes to next section
 if %more%==y start run.bat && exit
 if %more%==n goto b
-REM Gives he user a warning if the input is invalid
+REM Gives the user a warning if the input is invalid
 echo Error: Invalid input, please choose either Yes (y) or No (n) && goto l
 
 :e
