@@ -29,7 +29,9 @@ REM End of dependency check
 title intro
 
 REM Skips the intro if you have typed "y" in the corresponding place in VARS.txt
-if "%skipintro%"=="y" goto s
+if "%skipintro%"=="y" (
+  goto s
+)
 
 REM Intro
 REM [Intro code goes here when I have gotten permission to use it or if I write it myself]
@@ -124,9 +126,15 @@ cls
 :b
 
 REM Opens the corresponding downloads folder depending on which file format the user chose
-if "%format%"=="m" explorer %~dp0Downloads\Music
-if "%format%"=="a" explorer %~dp0Downloads\Audio
-if "%format%"=="v" explorer %~dp0Downloads\Video
+if "%format%"=="m" (
+  explorer %~dp0Downloads\Music
+)
+if "%format%"=="a" (
+  explorer %~dp0Downloads\Audio
+)
+if "%format%"=="v" (
+  explorer %~dp0Downloads\Video
+)
 
 REM Stops the script
 ENDLOCAL
