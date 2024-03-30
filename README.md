@@ -65,6 +65,12 @@ Please only change these if you know what you are doing! I cannot guarantee that
  
 **NOTE:** The FLAC files that get downloaded with this script are most likely not going to be “true” FLACs (re-encoded from a lossy format to FLAC =/= lossless audio).
 It does however sound marginally better than the regular mp3 file that you get from the script, but that may just be a placebo.
+
+## Why did I create this?
+When I first started using YT-DLP, I found it a bit cumbersome, as manually entering all the details every time I wanted to use it became tiresome.
+This project was originally developed for my private use, but I decided to release it to the public because I hadn’t come across anything like it.
+
+The initial public version (version 1), although better than the bare-bones YT-DLP experience, was difficult to set up, and was easy to mess up as well as being a bit “featureless” in my eyes. However, I created version 2 to make the setup process easier and to provide a more streamlined experience. 
  
 ## Disclaimer
 This script is a wrapper for YT-DLP, a command-line tool for downloading videos. What you do with the downloaded content is up to you, but please use it responsibly and legally. Downloading copyrighted content without permission is illegal.
