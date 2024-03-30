@@ -8,7 +8,7 @@ The supported sites aren't anything that I have control over, but please check [
 2. Download the *run.bat* file from this project and place it in the main folder.
 3. Run the *run.bat* file. You will see that the script has created five folders, **EXE**, **Downloads** and **Audio**, **Video** & **Music** in the **Downloads** folder.
 4. Download the *VARS.txt* file and place it in your **EXE** folder.
-5. Download the latest [YT-DLP FFmpeg build](https://github.com/yt-dlp/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip) and the latest [YT-DLP](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe) versions. (These links auto-download the latest versions)
+5. Download the latest [YT-DLP FFmpeg build](https://github.com/yt-dlp/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip) and the latest [YT-DLP](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe) versions. (These links auto-download the latest Windows versions)
 6. Unzip the FFmpeg ZIP file, then go into **bin** and move the three files to the **EXE** folder. Now you can delete the FFmpeg folder and the ZIP that you downloaded (The one named *ffmpeg-master-latest-win64-gpl*).
 7. Move the *yt-dlp.exe* file to the **EXE** folder that the script created earlier.
 8. Create a text file called *log.txt* (not *log.txt.txt*) in the main folder. ([Check the wiki](https://github.com/mrblomblo/yt-dlp-usage-script/wiki/How-to-show-file-extensions-on-Windows-10-&-11) for how to see extensions so that you don't accidentally use double-extensions)
@@ -73,7 +73,7 @@ This script is provided “as is” without warranty of any kind.
 This script is licensed under the Unlicense license, so I don't expect you to follow this. But for moral reasons; please don't steal my script and turn it into malware or anything like that. Though, as the license states, you are free to do whatever you want with it.
  
  
-### Credits
+## Credits
 * Usage of *%~dp0* in the script - [AUTOMATIC1111 Stable Diffusion web UI](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
 * Loading the *VARS.txt* file in to the *run.bat* file - [https://stackoverflow.com/a/66714820](https://stackoverflow.com/a/66714820)
 * Most of the args used for the music command - [YTDLnis](https://github.com/deniscerri/ytdlnis)
