@@ -1,13 +1,13 @@
 # YT-DLP Easy Usage Script
-This script is made to make usage of YT-DLP easier. It is based on [version 1](https://www.youtube.com/watch?v=HpAnrQbZoC4), which required a much more difficult setup, and had less options. This new version is much easier to setup and use as it requires no configuration of the *run.bat* file, along with the new music option, and better compatibility with editing software by using more common codecs and formats.
+This script is made to make usage of YT-DLP easier. It is based on [version 1](https://www.youtube.com/watch?v=HpAnrQbZoC4), which required a much more difficult setup, and had fewer options. This new version is much easier to set up and use as it requires no configuration of the *run.bat* file, along with the new music option, and better compatibility with editing software by using more common codecs and formats.
  
 ## Setup (Windows)
-1. Create a folder and name it whatever you want, this is where all of the files will be. (From now on I'll call it the main folder)
+1. Create a folder and name it whatever you want, this is where all the files will be. (From now on, I'll call it the main folder)
 2. Download the *run.bat* file from this project and place it in the main folder.
 3. Run the *run.bat* file. You will see that the script has created five folders, **EXE**, **Downloads** and **Audio**, **Video** & **Music** in the **Downloads** folder.
 4. Download the *VARS.txt* file and place it in your **EXE** folder.
 5. Download the latest [YT-DLP FFmpeg build](https://github.com/yt-dlp/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip) and the latest [YT-DLP](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe) versions. (These links auto-download the latest versions)
-6. Unzip the FFmpeg ZIP file, then go in to **bin** and move the three files to the **EXE** folder. Now you can delete the FFmpeg folder and the ZIP that you downloaded (The one named *ffmpeg-master-latest-win64-gpl*).
+6. Unzip the FFmpeg ZIP file, then go into **bin** and move the three files to the **EXE** folder. Now you can delete the FFmpeg folder and the ZIP that you downloaded (The one named *ffmpeg-master-latest-win64-gpl*).
 7. Move the *yt-dlp.exe* file to the **EXE** folder that the script created earlier.
 8. Create a text file called *log.txt* (not *log.txt.txt*) in the main folder. ([Check the wiki](https://github.com/mrblomblo/yt-dlp-usage-script/wiki/How-to-show-file-extensions-on-Windows-10-&-11) for how to see extensions so that you don't accidentally use double-extensions)
 9. Make sure that your folders and files match the photos below:
@@ -29,9 +29,9 @@ This script is made to make usage of YT-DLP easier. It is based on [version 1](h
 ### Usage
 1. Run the script.
 2. Input the URL of the video or audio that you wish to download.
-3. Select either audio (mp3) with "a", video (mp4) with "v", or music (FLAC) with "m".
+3. Select either audio (mp3) with “a”, video (mp4) with “v”, or music (FLAC) with “m”.
 4. The script should now start downloading the video or audio.
-5. If you want to download more type "y", otherwise type "n".
+5. If you want to download more, type “y”, otherwise type “n”.
 6. If you wanted to download more, the script will restart, and you will be prompted for the URL. If you didn't want to download more, the script will shut down and the folder that your latest download type was will open.
  
 ## Features
@@ -58,16 +58,16 @@ If you want to customize the script (mainly by changing the codecs & adding cust
 * set margs=
  
 The first three are for the codecs the script uses when downloading the content. The last three are extra args for YT-DLP to use when downloading the content.
-Please only change these if you know what you are doing! I cannot guarantee that I will be able to give support if something goes wrong and you've changed these.
+Please only change these if you know what you are doing! I cannot guarantee that I will be able to give support if something goes wrong, and you've changed these.
  
  
-**NOTE:** The FLAC files that get downloaded with this script are most likely not going to be "true" FLACs (re-encoded from a lossy format to FLAC =/= lossless audio).
+**NOTE:** The FLAC files that get downloaded with this script are most likely not going to be “true” FLACs (re-encoded from a lossy format to FLAC =/= lossless audio).
 It does however sound marginally better than the regular mp3 file that you get from the script, but that may just be a placebo.
  
 ## Disclaimer
 This script is a wrapper for YT-DLP, a command-line tool for downloading videos. What you do with the downloaded content is up to you, but please use it responsibly and legally. Downloading copyrighted content without permission is illegal.
 This script is intended for personal use, and for downloading content that is freely available online. I am not responsible for any misuse of this script or the downloaded content.
-This script is provided "as is" without warranty of any kind.
+This script is provided “as is” without warranty of any kind.
 This script is licensed under the Unlicense license, so I don't expect you to follow this. But for moral reasons; please don't steal my script and turn it into malware or anything like that. Though, as the license states, you are free to do whatever you want with it.
  
  
