@@ -53,8 +53,8 @@ If you want to customize the script (mainly by changing the codecs & adding cust
 * set acodec=mp3
 * set vcodec=h264
 * set mcodec=flac
-* set aargs=--embed-chapters --embed-subs
-* set vargs=--embed-chapters --embed-subs
+* set aargs=--embed-chapters
+* set vargs=--embed-chapters
 * set margs=
  
 The first three are for the codecs the script uses when downloading the content. The last three are extra args for YT-DLP to use when downloading the content.
