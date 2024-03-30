@@ -19,10 +19,10 @@ REM Additional args below, CHECK THE run.bat SO THAT YOU DON'T USE ONE THAT IS A
 REM I have included some example args that you may want to use.
 
 REM Extra Audio (a) args
-set aargs=--embed-chapters --embed-subs
+set aargs=--embed-chapters
 
 REM Extra Video (v) args
-set vargs=--embed-chapters --embed-subs
+set vargs=--embed-chapters
 
 REM Extra Music (m) args
 set margs=
