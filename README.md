@@ -51,7 +51,6 @@ The supported sites aren't anything that I have control over, but please check [
 
 ### Customization
 If you want to customize the script (mainly by changing the codecs & adding custom args), you can edit the *VARS.txt* file. There you will see these variables:
-* set skipintro=n [this currently does nothing, but it will when or if an intro gets added]
 * set acodec=mp3
 * set vcodec=h264
 * set mcodec=flac
