@@ -26,16 +26,6 @@ for %%f in (VARS.txt yt-dlp.exe ffplay.exe ffprobe.exe ffmpeg.exe) do (
 )
 REM End of dependency check
 
-title intro
-
-REM Skips the intro if you have typed "y" in the corresponding place in VARS.txt
-if "%skipintro%"=="y" (
-  goto s
-)
-
-REM Intro
-REM [Intro code goes here when I have gotten permission to use it or if I write it myself]
-
 cls
 
 :s
