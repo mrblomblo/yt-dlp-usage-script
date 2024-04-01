@@ -5,14 +5,13 @@ The supported sites aren't anything that I have control over, but please check [
  
 ## Setup (Windows)
 1. Create a folder and name it whatever you want, this is where all the files will be. (From now on, I'll call it the main folder)
-2. Download the *run.bat* file from this project and place it in the main folder.
+2. Download the [run.bat](https://github.com/mrblomblo/yt-dlp-usage-script/releases/latest/download/run.bat) file and place it in the main folder. *The link auto-downloads the latest Windows version*
 3. Run the *run.bat* file. You will see that the script has created five folders, **EXE**, **Downloads** and **Audio**, **Video** & **Music** in the **Downloads** folder.
-4. Download the *VARS.txt* file and place it in your **EXE** folder.
-5. Download the latest [YT-DLP FFmpeg build](https://github.com/yt-dlp/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip) and the latest [YT-DLP](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe) versions. (These links auto-download the latest Windows versions)
+4. Download the [VARS.txt](https://github.com/mrblomblo/yt-dlp-usage-script/releases/latest/download/VARS.txt) file from the latest release and place it in your **EXE** folder. *The link auto-downloads the latest Windows version*
+5. Download the latest [YT-DLP FFmpeg build](https://github.com/yt-dlp/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip) and the latest [YT-DLP](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe) versions. *These links auto-download the latest Windows versions*
 6. Unzip the FFmpeg ZIP file, then go into **bin** and move the three files to the **EXE** folder. Now you can delete the FFmpeg folder and the ZIP that you downloaded (The one named *ffmpeg-master-latest-win64-gpl*).
 7. Move the *yt-dlp.exe* file to the **EXE** folder that the script created earlier.
-8. Create a text file called *log.txt* (not *log.txt.txt*) in the main folder. ([Check the wiki](https://github.com/mrblomblo/yt-dlp-usage-script/wiki/How-to-show-file-extensions-on-Windows-10-&-11) for how to see extensions so that you don't accidentally use double-extensions)
-9. Make sure that your folders and files match the photos below:
+8. Make sure that your folders and files match the photos below (*Ignore log.txt as it gets created automatically after the first download*):
 
  ![image](https://github.com/mrblomblo/yt-dlp-usage-script/assets/63555404/942dfc46-6505-4449-ab0e-a4b07d3b6149)
 
@@ -35,6 +34,8 @@ The supported sites aren't anything that I have control over, but please check [
 4. The script should now start downloading the video or audio.
 5. If you want to download more, type “y”, otherwise type “n”.
 6. If you wanted to download more, the script will restart, and you will be prompted for the URL. If you didn't want to download more, the script will shut down and the folder that your latest download type was will open.
+
+* If you need to update YT-DLP; download the [update.bat](https://github.com/mrblomblo/yt-dlp-usage-script/releases/download/Update/update.bat) file and place it in your **EXE** folder, then run it once. *The link auto-downloads the latest Windows version*
  
 ## Features
 * Audio downloads (mp3) *(see photo below)*
@@ -66,10 +67,12 @@ Please only change these if you know what you are doing! I cannot guarantee that
 It does however sound marginally better than the regular mp3 file that you get from the script, but that may just be a placebo.
 
 ## Why did I create this?
-When I first started using YT-DLP, I found it a bit cumbersome, as manually entering all the details every time I wanted to use it became tiresome.
-This project was originally developed for my private use, but I decided to release it to the public because I hadn’t come across anything like it.
+When I first started using YT-DLP, I found it a bit cumbersome, as manually entering all the details every time I wanted to use it was annoying and time-consuming.
+This project was originally developed for my private use, but I decided to release it to the public because I hadn’t come across anything like it. (Though I didn't look very hard :P)
 
-The initial public version (version 1), although better than the bare-bones YT-DLP experience, was difficult to set up, and was easy to mess up as well as being a bit “featureless” in my eyes. However, I created version 2 to make the setup process easier and to provide a more streamlined experience. 
+The initial public version ([version 1](https://github.com/mrblomblo/yt-dlp-usage-script/releases/tag/Legacy)), although better than the bare-bones YT-DLP experience, was difficult to set up, and was easy to mess up as well as being a bit “featureless” in my eyes.
+
+I therefore created version 2 to make the setup process easier and to provide a more streamlined and easy-to-use experience. 
  
 ## Disclaimer
 This script is a wrapper for YT-DLP, a command-line tool for downloading videos. What you do with the downloaded content is up to you, but please use it responsibly and legally. Downloading copyrighted content without permission is illegal.
