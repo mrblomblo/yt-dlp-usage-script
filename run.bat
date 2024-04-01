@@ -13,13 +13,19 @@ REM Checks if necesssary folders exist and creates them if they don't exist
 for %%d in (EXE Downloads Downloads\Audio Downloads\Video Downloads\Music) do (
   if not exist "%~dp0%%d" (
     mkdir "%~dp0%%d"
+    color 06
     echo %%~nd folder not found, so I created it for you.
+    timeout 1 /NOBREAK >NUL
+    color 07
   )
 )
+
+cls
 
 REM Gives the user a warning if the necessary files can't be found
 for %%f in (VARS.txt yt-dlp.exe ffplay.exe ffprobe.exe ffmpeg.exe) do (
   if not exist "%~dp0EXE\%%f" (
+    color 04
     echo Error: %%f not found, please place it in the EXE folder or download it.
     goto e
   )
@@ -42,8 +48,13 @@ IF "%URL%"=="" (
 )
 REM Gives the user a warning if the URL input doesn't contain "http", "https" or "www"
 IF NOT "%URL:~0,4%"=="http" IF NOT "%URL:~0,5%"=="https" ( 
-  IF NOT "%URL:~0,4%"=="www" (  
+  IF NOT "%URL:~0,4%"=="www" (
+    cls
+    color 04
     echo Invalid URL format. Please use http://, https://, or www.
+    timeout 1 /NOBREAK >NUL
+    cls
+    color 07
     goto s
   )
 )
@@ -70,7 +81,13 @@ if "%format%"=="m" (
   goto d
 )
 REM Gives the user a warning if the input is invalid
-echo Error: Invalid format. Please enter MP3 (a), MP4 (v), or FLAC (m). && goto a
+cls
+color 04
+echo Error: Invalid format. Please enter MP3 (a), MP4 (v), or FLAC (m).
+timeout 1 /NOBREAK >NUL
+cls
+color 07
+goto a
 
 
 :d
@@ -102,7 +119,12 @@ if /i "%more%"=="n" (
   goto b
 )
 REM Gives the user a warning if the input is invalid
+cls
+color 04
 echo Error: Invalid input, please choose either Yes (y) or No (n)
+timeout 1 /NOBREAK >NUL
+cls
+color 07
 goto l
 
 
