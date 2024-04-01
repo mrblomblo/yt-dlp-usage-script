@@ -52,7 +52,7 @@ IF NOT "%URL:~0,4%"=="http" IF NOT "%URL:~0,5%"=="https" (
     cls
     color 04
     echo Invalid URL format. Please use http://, https://, or www.
-    timeout 1 /NOBREAK >NUL
+    timeout 2 /NOBREAK >NUL
     cls
     color 07
     goto s
@@ -84,7 +84,7 @@ REM Gives the user a warning if the input is invalid
 cls
 color 04
 echo Error: Invalid format. Please enter MP3 (a), MP4 (v), or FLAC (m).
-timeout 1 /NOBREAK >NUL
+timeout 2 /NOBREAK >NUL
 cls
 color 07
 goto a
@@ -122,7 +122,7 @@ REM Gives the user a warning if the input is invalid
 cls
 color 04
 echo Error: Invalid input, please choose either Yes (y) or No (n)
-timeout 1 /NOBREAK >NUL
+timeout 2 /NOBREAK >NUL
 cls
 color 07
 goto l
