@@ -66,6 +66,9 @@ Please only change these if you know what you are doing! I cannot guarantee that
 **NOTE:** The FLAC files that get downloaded with this script are most likely not going to be “true” FLACs (re-encoded from a lossy format to FLAC =/= lossless audio).
 It does however sound marginally better than the regular mp3 file that you get from the script, but that may just be a placebo.
 
+### Troubleshooting
+If you're having problems; please [check the wiki](https://github.com/mrblomblo/yt-dlp-usage-script/wiki/Troubleshooting)!
+
 ## Why did I create this?
 When I first started using YT-DLP, I found it a bit cumbersome, as manually entering all the details every time I wanted to use it was annoying and time-consuming.
 This project was originally developed for my private use, but I decided to release it to the public because I hadn’t come across anything like it. (Though I didn't look very hard :P)
