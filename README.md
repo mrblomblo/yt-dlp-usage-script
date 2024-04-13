@@ -13,17 +13,17 @@ The supported sites aren't anything that I have control over, but please check [
 7. Move the *yt-dlp.exe* file to the **EXE** folder that the script created earlier.
 8. Make sure that your folders and files match the photos below (*Ignore log.txt as it gets created automatically after the first download*):
 
- ![image](https://github.com/mrblomblo/yt-dlp-usage-script/assets/63555404/942dfc46-6505-4449-ab0e-a4b07d3b6149)
+ <img width="640" src="https://github.com/mrblomblo/yt-dlp-usage-script/assets/63555404/942dfc46-6505-4449-ab0e-a4b07d3b6149">
 
- ^^ Main folder
+ ^^ *Main folder*
 
- ![image](https://github.com/mrblomblo/yt-dlp-usage-script/assets/63555404/7a71e4bd-4552-49a6-aa84-b891f731d285)
+ <img width="640" src="https://github.com/mrblomblo/yt-dlp-usage-script/assets/63555404/7a71e4bd-4552-49a6-aa84-b891f731d285">
 
- ^^ EXE folder
+ ^^ *EXE folder*
 
- ![image](https://github.com/mrblomblo/yt-dlp-usage-script/assets/63555404/4f21140c-5d9b-4fca-96dc-bfb61334a100)
+ <img width="640" src="https://github.com/mrblomblo/yt-dlp-usage-script/assets/63555404/4f21140c-5d9b-4fca-96dc-bfb61334a100">
 
- ^^ Downloads folder
+ ^^ *Downloads folder*
 
 10. Done, now you can try it out!
  
@@ -42,13 +42,18 @@ The supported sites aren't anything that I have control over, but please check [
 * Video downloads (mp4) *(see photo below)*
 * Music downloads (FLAC) *(see photo below)*
 
-![image](https://github.com/mrblomblo/yt-dlp-usage-script/assets/63555404/e65f116e-83fb-44e3-9463-f17ffe302d82)
+<img width="360" src="https://github.com/mrblomblo/yt-dlp-usage-script/assets/63555404/e65f116e-83fb-44e3-9463-f17ffe302d82">
+
 * Semi-automatic setup (automatic creation of folders and log file) *(see photo below)*
 * Detection of missing dependencies *(see photo below)*
 
-![image](https://github.com/mrblomblo/yt-dlp-usage-script/assets/63555404/01ff747c-0fb3-4870-9c33-03aad84007e6)
+<img width="640" src="https://github.com/mrblomblo/yt-dlp-usage-script/assets/63555404/01ff747c-0fb3-4870-9c33-03aad84007e6">
+
 * Detection of invalid URL format & Detection of invalid user inputs
 * Easy customization with YT-DLP CLI args in VARS.txt *see below*
+
+**NOTE:** The FLAC files that get downloaded with this script are most likely not going to be “true" FLACs, since they get re-encoded from (most likely) M4A or OPUS.
+It does however sound marginally better than the regular mp3 file that you get from the script, but that may just be a placebo.
 
 ### Customization
 If you want to customize the script (mainly by changing the codecs & adding custom args), you can edit the *VARS.txt* file. There you will see these variables:
@@ -61,10 +66,6 @@ If you want to customize the script (mainly by changing the codecs & adding cust
  
 The first three are for the codecs the script uses when downloading the content. The last three are extra args for YT-DLP to use when downloading the content.
 Please only change these if you know what you are doing! I cannot guarantee that I will be able to give support if something goes wrong, and you've changed these.
- 
- 
-**NOTE:** The FLAC files that get downloaded with this script are most likely not going to be “true” FLACs (re-encoded from a lossy format to FLAC =/= lossless audio).
-It does however sound marginally better than the regular mp3 file that you get from the script, but that may just be a placebo.
 
 ### Troubleshooting
 If you're having problems; please [check the wiki](https://github.com/mrblomblo/yt-dlp-usage-script/wiki/Troubleshooting)!
@@ -79,9 +80,10 @@ I therefore created version 2 to make the setup process easier and to provide a 
  
 ## Disclaimer
 This script is a wrapper for YT-DLP, a command-line tool for downloading videos. What you do with the downloaded content is up to you, but please use it responsibly and legally. Downloading copyrighted content without permission is illegal.
-This script is intended for personal use, and for downloading content that is freely available online. I am not responsible for any misuse of this script or the downloaded content.
+This script is intended for personal use, and for downloading content that is freely available online. I am not responsible for any misuse of this script or the downloaded content. The script itself is also unable to actually download the videos, that part is made possible by YT-DLP.
 This script is provided “as is” without warranty of any kind.
-This script is licensed under the Unlicense license, so I don't expect you to follow this. But for moral reasons; please don't steal my script and turn it into malware or anything like that. Though, as the license states, you are free to do whatever you want with it.
+
+This script is licensed under the Unlicense license, so I don't expect you to follow this. But for moral reasons; please don't turn the script into malware or anything like that. Though, as the license states, you are free to do whatever you want with it.
  
  
 ## Credits
