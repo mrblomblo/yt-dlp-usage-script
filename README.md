@@ -4,6 +4,7 @@ This script is made to make usage of YT-DLP easier. It is based on [version 1](h
 The supported sites aren't anything that I have control over, but please check [here](https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md) to see which sites YT-DLP can download from. (May contain names of mature and NSFW/L websites)
  
 ## Setup (Windows)
+If you prefer video instructions over text (like me), you should watch my [tutorial video](https://www.youtube.com/watch?v=nAeNApj0WGw) on it!
 1. Create a folder and name it whatever you want, this is where all the files will be. (From now on, I'll call it the main folder)
 2. Download the [run.bat](https://github.com/mrblomblo/yt-dlp-usage-script/releases/latest/download/run.bat) file and place it in the main folder. *The link auto-downloads the latest Windows version*. If you get a SmartScreen warning; [check the wiki](https://github.com/mrblomblo/yt-dlp-usage-script/wiki/What-to-do-if-you-get-safety-warnings)! 
 3. Run the *run.bat* file. You will see that the script has created five folders, **EXE**, **Downloads** and **Audio**, **Video** & **Music** in the **Downloads** folder. If you get a SmartScreen warning; [check the wiki](https://github.com/mrblomblo/yt-dlp-usage-script/wiki/What-to-do-if-you-get-safety-warnings)!
