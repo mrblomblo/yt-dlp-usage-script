@@ -1,25 +1,25 @@
-REM Set your variables here!
+REM set your variables here!
 REM you can find args here: https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#usage-and-options
-REM [DO NOT USE A SPACE BETWEEN THE "=" AND THE ARG!] 
+REM [DO NOT USE A SPACE BETWEEN THE ":" AND THE ARG OR CODEC!] 
 
-REM Audio codec for audio (affects MP3 and MP4, not FLAC) DEFAULT: mp3
-set acodec=mp3
+REM Audio codec for audio (Doesn't seem to affect MP3 for some reason, but does affect MP4) DEFAULT: mp3
+acodec:mp3
 
 REM Video codec DEFAULT: h264
-set vcodec=h264
+vcodec:h264
 
 REM Music codec DEFAULT: flac
-set mcodec=flac
+mcodec:flac
 
 
 REM Additional args below, CHECK THE run.bat SO THAT YOU DON'T USE ONE THAT IS ALREADY BEING USED!
 REM I have included some example args that you may want to use.
 
 REM Extra Audio (a) args
-set aargs=--embed-chapters
+aargs:--embed-chapters
 
 REM Extra Video (v) args
-set vargs=--embed-chapters
+vargs:--embed-chapters
 
 REM Extra Music (m) args
-set margs=
+margs:
