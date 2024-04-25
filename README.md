@@ -36,7 +36,7 @@ If you prefer video instructions over text (like me), you should watch my [tutor
 5. If you want to download more, type “y”, otherwise type “n”.
 6. If you wanted to download more, the script will restart, and you will be prompted for the URL. If you didn't want to download more, the script will shut down and the folder that your latest download type was will open.
 
-* If you need to update YT-DLP; download the [update.bat](https://github.com/mrblomblo/yt-dlp-usage-script/releases/download/Update/update.bat) file and place it in your **EXE** folder, then run it once. *The link auto-downloads the latest Windows version*
+* If you want to update *YT-DLP* and *run.bat*; download the [update.bat](https://github.com/mrblomblo/yt-dlp-usage-script/releases/download/Update/update.bat) file and place it in your **EXE** folder, then run it once. *The link auto-downloads the latest Windows version*
  
 ## Features
 * Audio downloads (mp3) *(see photo below)*
@@ -52,6 +52,7 @@ If you prefer video instructions over text (like me), you should watch my [tutor
 
 * Detection of invalid URL format & Detection of invalid user inputs
 * Easy customization with YT-DLP CLI args in VARS.txt *see below*
+* Easy updates with [update.bat](https://github.com/mrblomblo/yt-dlp-usage-script/releases/download/Update/update.bat)
 
 **NOTE:** The FLAC files that get downloaded with this script are most likely not going to be “true" FLACs, since they get re-encoded from (most likely) M4A or OPUS.
 It does however sound marginally better than the regular mp3 file that you get from the script, but that may just be a placebo.
@@ -93,3 +94,5 @@ This script is licensed under the Unlicense license, so I don't expect you to fo
 * Most of the args used for the music command - [YTDLnis](https://github.com/deniscerri/ytdlnis)
 * URL check - [Google Gemini](https://gemini.google.com)
 * Improved dependency check - [Google Gemini](https://gemini.google.com)
+* Help with troubleshooting VARS.txt not loading properly - [Microsoft Copilot](https://copilot.microsoft.com/)
+* Discovery that lead to a bug being fixed - [FrostyMangg](https://www.youtube.com/@FrostyMangg)
