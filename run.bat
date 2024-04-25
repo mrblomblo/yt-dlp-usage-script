@@ -1,13 +1,8 @@
 @echo OFF
-
-REM Loading of VARS.txt
-SETLOCAL EnableDelayedExpansion
-set N=^
-set CONTENT=
-for /f "delims=" %%x in ('type %~dp0EXE\VARS.txt') do set "CONTENT=!CONTENT!%%x!N!"
+setlocal enabledelayedexpansion
 
 REM Start of dependency check
-title Dependency check
+title v2.7: Dependency check
 
 REM Checks if necesssary folders exist and creates them if they don't exist
 for %%d in (EXE Downloads Downloads\Audio Downloads\Video Downloads\Music) do (
@@ -34,11 +29,26 @@ REM End of dependency check
 
 cls
 
+REM Loading of VARS.txt
+
+for /f "usebackq tokens=1,* delims=:" %%A in ("%~dp0EXE\VARS.txt") do (
+    set "key=%%A"
+    set "value=%%B"
+    REM Set the variables to the ones in VARS.txt
+    if "!key!"=="acodec" set "acodec=!value!"
+    if "!key!"=="vcodec" set "vcodec=!value!"
+    if "!key!"=="mcodec" set "mcodec=!value!"
+    if "!key!"=="aargs" set "aargs=!value!"
+    if "!key!"=="vargs" set "vargs=!value!"
+    if "!key!"=="margs" set "margs=!value!"
+)
+
 :s
 
-title Enter URL to Download
+title v2.7: Enter URL to Download
 
 REM User input for URL
+
 set /p "URL=URL: "
 
 REM Gives the user a warning if the URL input was empty
@@ -61,7 +71,7 @@ IF NOT "%URL:~0,4%"=="http" IF NOT "%URL:~0,5%"=="https" (
 
 cls
 
-title Enter File Format
+title v2.7: Enter File Format
 
 :a
 
@@ -94,7 +104,7 @@ goto a
 
 cls
 
-title Downloading...
+title v2.7: Downloading...
 
 REM Downloads from the URL input with the file format that the user selected
 if "%format%"=="a" %~dp0EXE\yt-dlp.exe -P %~dp0Downloads\Audio %aargs% -f "ba/b" -x --audio-format "mp3" -S acodec:%acodec% --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w %URL% && @echo %date%: Audio - %URL%>>%~dp0log.txt
@@ -103,7 +113,7 @@ if "%format%"=="m" %~dp0EXE\yt-dlp.exe -P %~dp0Downloads\Music %margs% --sponsor
 
 cls
 
-title Download more?
+title v2.7: Download more?
 
 :l
 
@@ -130,7 +140,7 @@ goto l
 
 :e
 REM Part of the script that the dependency check skips to
-title Dependency check
+title v2.7: Dependency check
 pause
 
 cls
