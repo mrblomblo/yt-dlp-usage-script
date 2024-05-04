@@ -67,7 +67,9 @@ If you want to customize the script (mainly by changing the codecs & adding cust
 * set margs=
  
 The first three are for the codecs the script uses when downloading the content. The last three are extra args for YT-DLP to use when downloading the content.
-Please only change these if you know what you are doing! I cannot guarantee that I will be able to give support if something goes wrong, and you've changed these.
+Please only change these if you know what you are doing! I cannot guarantee that I will be able to give support if something goes wrong and you've changed these.
+
+I will also give limited support to you if you have changed anything in *run.bat*.
 
 ### Troubleshooting
 If you're having problems; please [check the wiki](https://github.com/mrblomblo/yt-dlp-usage-script/wiki/Troubleshooting)!
