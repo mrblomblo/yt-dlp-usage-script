@@ -11,6 +11,10 @@ vcodec:h264
 REM Music codec DEFAULT: flac
 mcodec:flac
 
+REM Enable the manual resolution selector (chooses the nearest available resolution, but not above the chosen one).
+REM change "no" to "yes" to enable it. DEFAULT: no
+reschooser:no
+
 
 REM Additional args below, CHECK THE run.bat SO THAT YOU DON'T USE ONE THAT IS ALREADY BEING USED!
 REM I have included some example args that you may want to use.
