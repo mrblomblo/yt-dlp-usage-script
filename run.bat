@@ -38,6 +38,7 @@ for /f "usebackq tokens=1,* delims=:" %%A in ("%~dp0EXE\VARS.txt") do (
     if "!key!"=="acodec" set "acodec=!value!"
     if "!key!"=="vcodec" set "vcodec=!value!"
     if "!key!"=="mcodec" set "mcodec=!value!"
+    if "!key!"=="reschooser" set "reschooser=!value!"
     if "!key!"=="aargs" set "aargs=!value!"
     if "!key!"=="vargs" set "vargs=!value!"
     if "!key!"=="margs" set "margs=!value!"
@@ -84,11 +85,65 @@ REM Checks if file format input is valid
 if "%format%"=="a" (
   goto d
 )
-if "%format%"=="v" (
+if "%reschooser%"=="no" if "%format%"=="v" (
   goto d
 )
 if "%format%"=="m" (
   goto d
+)
+if "%reschooser%"=="yes" if "%format%"=="v" (
+  REM Resolution selection screen
+  :s2
+  cls
+  title v2.7: Resolution selection
+
+  echo Select which maximum resolution you wish to download
+  echo 1 - 4320p
+  echo 2 - 2160p
+  echo 3 - 1440p
+  echo 4 - 1080p
+  echo 5 - 720p
+  echo 6 - 480p
+
+  REM User input for what to update
+  set /p "selection=Enter selection: "
+
+  cls
+
+  REM Checks if selection input is valid
+  if "%selection%"=="1" (
+    cls
+    goto 8k
+  )
+  if "%selection%"=="2" (
+    cls
+    goto 4k
+  )
+  if "%selection%"=="3" (
+    cls
+    goto 1440
+  )
+  if "%selection%"=="4" (
+    cls
+    goto 1080
+  )
+  if "%selection%"=="5" (
+    cls
+    goto 720
+  )
+  if "%selection%"=="6" (
+    cls
+    goto 480
+  )
+
+  REM Gives the user a warning if the input is invalid
+  cls
+  color 04
+  echo Error: Invalid input. Please enter either 1, 2, 3, 4, 5, or 6.
+  timeout 2 /NOBREAK >NUL
+  cls
+  color 07
+  goto s2
 )
 REM Gives the user a warning if the input is invalid
 cls
@@ -99,23 +154,53 @@ cls
 color 07
 goto a
 
-
-:d
-
 cls
 
+:8k
+title v2.7: Downloading...
+if "%format%"=="v" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Video" %vargs% -f "bv*[height<=4320]+ba/b[height<=4320]" --merge-output-format mp4 -S vcodec:%vcodec% -S acodec:%acodec% --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w %URL% && @echo %date%: Video - %URL%>>"%~dp0log.txt"
+goto l
+
+:4k
+title v2.7: Downloading...
+if "%format%"=="v" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Video" %vargs% -f "bv*[height<=2160]+ba/b[height<=2160]" --merge-output-format mp4 -S vcodec:%vcodec% -S acodec:%acodec% --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w %URL% && @echo %date%: Video - %URL%>>"%~dp0log.txt"
+goto l
+
+:1440
+title v2.7: Downloading...
+if "%format%"=="v" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Video" %vargs% -f "bv*[height<=1440]+ba/b[height<=1440]" --merge-output-format mp4 -S vcodec:%vcodec% -S acodec:%acodec% --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w %URL% && @echo %date%: Video - %URL%>>"%~dp0log.txt"
+goto l
+
+:1080
+title v2.7: Downloading...
+if "%format%"=="v" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Video" %vargs% -f "bv*[height<=1080]+ba/b[height<=1080]" --merge-output-format mp4 -S vcodec:%vcodec% -S acodec:%acodec% --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w %URL% && @echo %date%: Video - %URL%>>"%~dp0log.txt"
+goto l
+
+:720
+title v2.7: Downloading...
+if "%format%"=="v" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Video" %vargs% -f "bv*[height<=720]+ba/b[height<=720]" --merge-output-format mp4 -S vcodec:%vcodec% -S acodec:%acodec% --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w %URL% && @echo %date%: Video - %URL%>>"%~dp0log.txt"
+goto l
+
+:480
+title v2.7: Downloading...
+if "%format%"=="v" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Video" %vargs% -f "bv*[height<=480]+ba/b[height<=480]" --merge-output-format mp4 -S vcodec:%vcodec% -S acodec:%acodec% --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w %URL% && @echo %date%: Video - %URL%>>"%~dp0log.txt"
+goto l
+
+cls
+:d
 title v2.7: Downloading...
 
 REM Downloads from the URL input with the file format that the user selected
 if "%format%"=="a" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Audio" %aargs% -f "ba/b" -x --audio-format "mp3" -S acodec:%acodec% --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w %URL% && @echo %date%: Audio - %URL%>>"%~dp0log.txt"
 if "%format%"=="v" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Video" %vargs% -f "bv*[height>=4320]+ba/b[height>=4320] / bv*[height>=2160]+ba/b[height>=2160] / bv*[height>=1440]+ba/b[height>=1440] / bv*[height>=1080]+ba/b[height>=1080] / bv+ba/b" --merge-output-format mp4 -S vcodec:%vcodec% -S acodec:%acodec% --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w %URL% && @echo %date%: Video - %URL%>>"%~dp0log.txt"
 if "%format%"=="m" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Music" %margs% --sponsorblock-remove "music_offtopic" --ppa "ffmpeg:-c:v mjpeg -vf crop=\"'if(gt(ih,iw),iw,ih)':'if(gt(iw,ih),ih,iw)'\"" -f "ba/b" -x --audio-format "flac" -S acodec:%mcodec% --embed-metadata  --parse-metadata "%%(title)s:%%(title)s" --parse-metadata "%%(uploader,channel,creator,artist|null)s:%%(uploader)s" --parse-metadata "artist:(?P<meta_album_artist>[^,]+)" --parse-metadata "%%(album_artist,meta_album_artist,uploader)s:%%(album_artist)s" --parse-metadata "%%(release_year,release_date>%%Y,upload_date>%%Y)s:%%(meta_date)s" --parse-metadata "%%(album,title)s:%%(meta_album)s" --embed-thumbnail --convert-thumbnails "jpg" --ppa "thumbnailsconvertor:-qmin 1 -q:v 1" -o "%%(uploader)s - %%(title)s.%%(ext)s" -w %URL% && @echo %date%: Music - %URL%>>"%~dp0log.txt"
+goto l
+
+:l
 
 cls
 
 title v2.7: Download more?
-
-:l
 
 REM User input for if they want to download more
 set /p "more=Do you want to download more? Yes (y) or No (n): "
