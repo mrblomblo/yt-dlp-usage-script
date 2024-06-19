@@ -1,32 +1,183 @@
 @echo OFF
 setlocal
 
-REM If you don't want run.bat to be automatically updated, please remove the code UNDER "yt-dlp.exe -U", but leave "title Updates done" and the code under it alone. This script should still end with "pause" and "exit".
+REM Gives the user a warning if update.bat isn't in the EXE folder
+title v2: Dependency check
+for %%I in (.) do set CurrDirName=%%~nxI
+if NOT "%CurrDirName%" == "EXE" (
+  color 04
+  echo Please place update.bat in the EXE folder!
+  timeout 4 /NOBREAK >NUL
+  color 07
+  cls
+  goto d
+)
 
-REM Update YT-DLP
-title Updating YT-DLP...
+REM Update selection screen
+:s
+cls
+title v2: Update selection
+
+echo Select what you want to update
+echo (1) YT-dlp
+echo (2) run.bat
+echo (3) VARS.txt
+echo (4) update.bat
+echo (e) Exit
+
+REM User input for what to update
+set /p "selection=Enter selection: "
+
+cls
+
+REM Checks if selection input is valid
+if "%selection%"=="1" (
+  goto y
+)
+if "%selection%"=="2" (
+  goto r
+)
+if "%selection%"=="3" (
+  goto v
+)
+if "%selection%"=="4" (
+  goto u
+)
+if "%selection%"=="e" (
+  goto d
+)
+
+REM Gives the user a warning if the input is invalid
+cls
+color 04
+echo Error: Invalid input. Please enter either YT-dlp (1), run.bat (2), VARS.txt (3), update.bat (4), or Exit (e).
+timeout 2 /NOBREAK >NUL
+cls
+color 07
+goto s
+
+REM Update YT-dlp
+:y
+cls
+title v2: Updating YT-dlp...
 
 yt-dlp.exe -U 
+echo YT-dlp has been updated!
+timeout 2 /NOBREAK >NUL
+cls
+goto s
 
 REM Update run.bat
-title Updating run.bat...
-
-echo .
-echo You may notice a large chunk of red text under this text, which you can ignore. I recommend updating run.bat through the actual releases on GitHub, this is just for your convenience. 
-echo If you don't want run.bat to be automatically updated when you update YT-DLP, please edit this file and follow the instructions there. 
-echo .
+:r
+cls
+title v2: Updating run.bat...
 
 powershell -executionpolicy Bypass -Command "& { Write-Output (Get-Location).Path.Split('\\')[-2] }" > tmp_folder.txt
 if exist tmp_folder.txt (
   set /p folder_name=< tmp_folder.txt
   powershell -executionpolicy Bypass -Command "Invoke-WebRequest -Uri https://github.com/mrblomblo/yt-dlp-usage-script/releases/latest/download/run.bat -OutFile ..\%folder_name%\run.bat"
   del tmp_folder.txt
-  echo run.bat has been updated.
+  echo run.bat has been updated!
+  timeout 2 /NOBREAK >NUL
+  cls
+  goto s
 ) else (
-  echo Error: Couldn't determine which folder run.bat is in.
+  cls
+  color 04
+  echo Error: Couldn't determine which folder run.bat is in. (Update failed)
+  pause
+  cls
+  color 07
+  goto s
 )
 
-title Updates done
+REM Give warning before updating VARS.txt
+:v
+cls
+title v2: Warning!
 
+color 04
+echo WARNING: This will overwrite all args and other changes that you've done to VARS.txt!
+echo Default settings may also have changed, which may sometimes be unwanted.
 pause
+cls
+color 07
+echo If you still want to update it, please type "y".
+set /p "VARSwarn=Otherwise, type "n" to go back to the selection screen: "
+
+REM Checks if input is valid
+if "%VARSwarn%"=="y" (
+  goto w
+)
+if "%VARSwarn%"=="n" (
+  goto s
+)
+
+REM Gives the user a warning if the input is invalid
+cls
+color 04
+echo Error: Invalid input. Please enter either Yes (y) or No (n).
+timeout 2 /NOBREAK >NUL
+cls
+color 07
+goto v
+
+REM Update VARS.txt
+:w
+cls
+title v2: Updating VARS.txt...
+
+powershell -executionpolicy Bypass -Command "Invoke-WebRequest -Uri https://github.com/mrblomblo/yt-dlp-usage-script/releases/latest/download/vars.txt -OutFile VARS.txt"
+echo VARS.txt has been updated!
+timeout 2 /NOBREAK >NUL
+cls
+goto s
+
+REM Give warning before updating update.bat 
+:u
+cls
+title v2: Warning!
+
+color 04
+echo OBS: This will cause update.bat to suddenly exit after having updated itself!
+pause
+cls
+color 07
+echo If you still want to update it, please type "y".
+set /p "updatewarn=Otherwise, type "n" to go back to the selection screen: "
+
+REM Checks if input is valid
+if "%updatewarn%"=="y" (
+  goto i
+)
+if "%updatewarn%"=="n" (
+  goto s
+)
+
+REM Gives the user a warning if the input is invalid
+cls
+color 04
+echo Error: Invalid input. Please enter either Yes (y) or No (n).
+timeout 2 /NOBREAK >NUL
+cls
+color 07
+goto u
+
+REM Update update.bat
+:i
+cls
+title v2: Updating update.bat...
+
+powershell -executionpolicy Bypass -Command "Invoke-WebRequest -Uri https://github.com/mrblomblo/yt-dlp-usage-script/releases/latest/download/update.bat -OutFile update.bat"
+echo update.bat has been updated!
+timeout 2 /NOBREAK >NUL
+cls
+goto s
+
+REM End of update script
+:d
+title v2: Exiting...
+echo Exiting!
+timeout 1 /NOBREAK >NUL
+ENDLOCAL
 exit
