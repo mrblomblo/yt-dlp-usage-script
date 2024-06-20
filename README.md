@@ -60,21 +60,36 @@ If you prefer video instructions over text (like me), you should watch my [tutor
 It does however sound marginally better than the regular mp3 file that you get from the script, but that may just be a placebo.
 
 ### Customization
-If you want to customize the script (mainly by changing the codecs & adding custom args), you can edit the *VARS.txt* file. There you will see these variables:
-* set acodec=mp3
-* set vcodec=h264
-* set mcodec=flac
-* set aargs=--embed-chapters
-* set vargs=--embed-chapters
-* set margs=
+If you want to customize the script, you can edit the *VARS.txt* file. There you will see these variables and their default values:
+* acodec:mp3
+* vcodec:h264
+* mcodec:flac
+* reschooser:no
+* aargs:--embed-chapters
+* vargs:--embed-chapters
+* margs:
  
 The first three are for the codecs the script uses when downloading the content. The last three are extra args for YT-DLP to use when downloading the content.
 Please only change these if you know what you are doing! I cannot guarantee that I will be able to give support if something goes wrong and you've changed these.
 
-I will also give limited support to you if you have changed anything in *run.bat*.
+I will **NOT** give support to you if you have changed anything in *run.bat* or *update.bat*, or if you are using another person's version of my script(s).
 
 ### Troubleshooting
 If you're having problems; please [check the wiki](https://github.com/mrblomblo/yt-dlp-usage-script/wiki/Troubleshooting)!
+
+## Updates
+If you want to easily download updates, you can use [update.bat](https://github.com/mrblomblo/yt-dlp-usage-script/releases/latest/download/update.bat).
+
+When you use launch it, you'll see a menu which allows you to choose what you want to update. As of now, the available choices are:
+* YT-dlp
+* run.bat
+* VARS.txt (overwrites your args & choices)
+* update.bat (itself)
+
+It features error checks and dependency checks just like *run.bat*, as well as warnings for updating *VARS.txt* and itself in order to make it as easy as possible to use!
+I also made it so that it creates a backup of *VARS.txt* when you choose to update it, since it overwrites it during the update process!
+
+Keep in mind that it isn't guaranteed that an update has been released, so use it sparingly.
 
 ## Why did I create this?
 When I first started using YT-DLP, I found it a bit cumbersome, as manually entering all the details every time I wanted to use it was annoying and time-consuming.
@@ -100,3 +115,4 @@ This script is licensed under the Unlicense license, so I don't expect you to fo
 * Improved dependency check - [Google Gemini](https://gemini.google.com)
 * Help with troubleshooting VARS.txt not loading properly - [Microsoft Copilot](https://copilot.microsoft.com/)
 * Discovery that lead to a bug being fixed - [FrostyMangg](https://www.youtube.com/@FrostyMangg)
+* Getting the current directory (for update.bat) - [https://superuser.com/a/160712](https://superuser.com/a/160712)
