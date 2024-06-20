@@ -127,6 +127,10 @@ REM Update VARS.txt
 cls
 title v2: Updating VARS.txt...
 
+echo Creating a backup...
+type VARS.txt > VARS.txt.bak
+echo Backup created!
+
 powershell -executionpolicy Bypass -Command "Invoke-WebRequest -Uri https://github.com/mrblomblo/yt-dlp-usage-script/releases/latest/download/vars.txt -OutFile VARS.txt"
 echo VARS.txt has been updated!
 timeout 2 /NOBREAK >NUL
