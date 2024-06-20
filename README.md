@@ -37,8 +37,6 @@ If you prefer video instructions over text (like me), you should watch my [tutor
 4. The script should now start downloading the video or audio.
 5. If you want to download more, type “y”, otherwise type “n”.
 6. If you wanted to download more, the script will restart, and you will be prompted for the URL. If you didn't want to download more, the script will shut down and the folder that your latest download type was will open.
-
-* If you want to update *YT-DLP* and *run.bat*; download the [update.bat](https://github.com/mrblomblo/yt-dlp-usage-script/releases/latest/download/update.bat) file and place it in your **EXE** folder, then run it whenever you feel like updating (not guaranteed that an update will have been released though). *The link auto-downloads the latest Windows version*
  
 ## Features
 * Audio downloads (mp3) *(see photo below)*
