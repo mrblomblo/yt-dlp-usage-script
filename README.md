@@ -6,14 +6,14 @@ The supported sites aren't anything that I have control over, but please check [
 If you want to see planned features and other ideas for this project, you can check the [project plan](https://github.com/users/mrblomblo/projects/2) out!
  
 ## Setup (Windows)
-If you prefer video instructions over text (like me), you should watch my [tutorial video](https://www.youtube.com/watch?v=nAeNApj0WGw) on it!
-1. Create a folder and name it whatever you want, this is where all the files will be. (From now on, I'll call it the main folder)
+If you prefer video instructions over text (like me), you should watch my [tutorial video](https://www.youtube.com/watch?v=nAeNApj0WGw) on it! The tutorial is on an old version, but the steps listed in it are still applicable.
+1. Create a folder and name it whatever you want, this is where all the files will be (*From now on, I'll call it the main folder*)
 2. Download the [run.bat](https://github.com/mrblomblo/yt-dlp-usage-script/releases/latest/download/run.bat) file and place it in the main folder. *The link auto-downloads the latest Windows version*. If you get a SmartScreen warning; [check the wiki](https://github.com/mrblomblo/yt-dlp-usage-script/wiki/What-to-do-if-you-get-safety-warnings)! 
-3. Run the *run.bat* file. You will see that the script has created five folders, **EXE**, **Downloads** and **Audio**, **Video** & **Music** in the **Downloads** folder. If you get a SmartScreen warning; [check the wiki](https://github.com/mrblomblo/yt-dlp-usage-script/wiki/What-to-do-if-you-get-safety-warnings)!
+3. Run the *run.bat* file. You will see that the script has created five folders, **EXE**, **Downloads**. In the **Downloads** folder it'll have created three folders, **Audio**, **Video** & **Music** . If you get a SmartScreen warning; [check the wiki](https://github.com/mrblomblo/yt-dlp-usage-script/wiki/What-to-do-if-you-get-safety-warnings)!
 4. Download the [VARS.txt](https://github.com/mrblomblo/yt-dlp-usage-script/releases/latest/download/VARS.txt) file from the latest release and place it in your **EXE** folder. *The link auto-downloads the latest Windows version*
 5. Download the latest [YT-DLP FFmpeg build](https://github.com/yt-dlp/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip) and the latest [YT-DLP](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe) versions. *These links auto-download the latest Windows versions*
-6. Unzip the FFmpeg ZIP file, then go into **bin** and move the three files to the **EXE** folder. Now you can delete the FFmpeg folder and the ZIP that you downloaded (The one named *ffmpeg-master-latest-win64-gpl*).
-7. Move the *yt-dlp.exe* file to the **EXE** folder that the script created earlier.
+6. Unzip the FFmpeg ZIP file, then go into **bin** and move the three files to the **EXE** folder. Now you can delete the FFmpeg folder and the ZIP that you downloaded (The one named *ffmpeg-master-latest-win64-gpl*)
+7. Move the *yt-dlp.exe* file to the **EXE** folder that the script created earlier
 8. Make sure that your folders and files match the photos below (*Ignore log.txt as it gets created automatically after the first download*):
 
  <img width="640" src="https://github.com/mrblomblo/yt-dlp-usage-script/assets/63555404/942dfc46-6505-4449-ab0e-a4b07d3b6149">
@@ -31,12 +31,12 @@ If you prefer video instructions over text (like me), you should watch my [tutor
 10. Done, now you can try it out!
  
 ### Usage
-1. Run the script.
-2. Input the URL of the video or audio that you wish to download.
-3. Select either audio (mp3) with “a”, video (mp4) with “v”, or music (FLAC) with “m”.
-4. The script should now start downloading the video or audio.
-5. If you want to download more, type “y”, otherwise type “n”.
-6. If you wanted to download more, the script will restart, and you will be prompted for the URL. If you didn't want to download more, the script will shut down and the folder that your latest download type was will open.
+1. Run the script
+2. Input the URL of the video or audio that you wish to download
+3. Select either audio (mp3) with “a”, video (mp4) with “v”, or music (FLAC) with “m”
+4. YT-dlp should now start downloading the desired content with your choices in mind
+5. If you want to download more, type “y”, otherwise type “n”
+6. If you wanted to download more, the script will restart. If you didn't want to download more, the script will shut down, and the folder that your latest download type was will open
  
 ## Features
 * Audio downloads (mp3) *(see photo below)*
@@ -50,9 +50,10 @@ If you prefer video instructions over text (like me), you should watch my [tutor
 
 <img width="640" src="https://github.com/mrblomblo/yt-dlp-usage-script/assets/63555404/01ff747c-0fb3-4870-9c33-03aad84007e6">
 
-* Detection of invalid URL format & Detection of invalid user inputs
-* Easy customization with YT-DLP CLI args in VARS.txt *see below*
+* Detection of invalid URL format and invalid user inputs
+* Easy customization with YT-DLP CLI args in VARS.txt (*see Customization*)
 * Easy updates with [update.bat](https://github.com/mrblomblo/yt-dlp-usage-script/releases/latest/download/update.bat)
+* Manual resolution picker (This is disabled by default, but can be enabled in *VARS.txt*)
 
 **NOTE:** The FLAC files that get downloaded with this script are most likely not going to be “true" FLACs, since they get re-encoded from (most likely) M4A or OPUS.
 It does however sound marginally better than the regular mp3 file that you get from the script, but that may just be a placebo.
@@ -99,7 +100,7 @@ I therefore created version 2 to make the setup process easier and to provide a 
  
 ## Disclaimer
 This script is a wrapper for YT-DLP, a command-line tool for downloading videos. What you do with the downloaded content is up to you, but please use it responsibly and legally. Downloading copyrighted content without permission is illegal.
-This script is intended for personal use, and for downloading content that is freely available online. I am not responsible for any misuse of this script or the downloaded content. The script itself is also unable to actually download the videos, that part is made possible by YT-DLP.
+This script is intended for personal use, and for downloading content that is freely available online. I am not responsible for any misuse of this script or the downloaded content. The script itself is also unable to actually download the videos, that part is handled by YT-DLP.
 This script is provided “as is” without warranty of any kind.
 
 This script is licensed under the Unlicense license, so I don't expect you to follow this. But for moral reasons; please don't turn the script into malware or anything like that. Though, as the license states, you are free to do whatever you want with it.
