@@ -34,7 +34,7 @@ If you prefer video instructions over text (like me), you should watch my [tutor
 1. Run the script
 2. Input the URL of the video or audio that you wish to download
 3. Select either audio (mp3) with “a”, video (mp4) with “v”, or music (FLAC) with “m”
-4. YT-dlp should now start downloading the desired content with your choices in mind
+4. YT-DLP should now start downloading the desired content with your choices in mind
 5. If you want to download more, type “y”, otherwise type “n”
 6. If you wanted to download more, the script will restart. If you didn't want to download more, the script will shut down, and the folder that your latest download type was will open
  
