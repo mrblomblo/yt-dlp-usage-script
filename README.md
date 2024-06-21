@@ -1,7 +1,7 @@
 # YT-DLP Easy Usage Script
 This script is made to make usage of YT-DLP easier. It is based on [version 1](https://www.youtube.com/watch?v=HpAnrQbZoC4), which required a much more difficult setup, and had fewer options. This new version is much easier to set up and use as it requires no configuration of the *run.bat* file, along with the new music option, and better compatibility with editing software by using more common codecs and formats.
 
-The supported sites aren't anything that I have control over, but please check [here](https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md) to see which sites YT-DLP can download from. (May contain names of mature and NSFW/L websites)
+The supported sites aren't anything that I have control over, but please check [here](https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md) to see which sites YT-DLP can download from. (May contain names of NSFW/L websites)
 
 If you want to see planned features and other ideas for this project, you can check the [project plan](https://github.com/users/mrblomblo/projects/2) out!
  
