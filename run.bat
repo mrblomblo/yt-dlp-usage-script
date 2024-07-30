@@ -185,32 +185,32 @@ cls
 
 :8k
 title v2.9: Downloading...
-if "%format%"=="v" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Video" "%vargs%" -f "bestvideo[height=4320]+bestaudio" --merge-output-format mp4 -S vcodec:"%vcodec%" -S acodec:"%acodec%" --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Video - "%URL%">>"%~dp0log.txt"
+if "%format%"=="v" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Video" %vargs% -f "bestvideo[height=4320]+bestaudio" --merge-output-format mp4 -S vcodec:"%vcodec%" -S acodec:"%acodec%" --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Video - "%URL%">>"%~dp0log.txt"
 goto l 
  
 :4k 
 title v2.9: Downloading... 
-if "%format%"=="v" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Video" "%vargs%" -f "bestvideo[height=2160]+bestaudio" --merge-output-format mp4 -S vcodec:"%vcodec%" -S acodec:"%acodec%" --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Video - "%URL%">>"%~dp0log.txt"
+if "%format%"=="v" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Video" %vargs% -f "bestvideo[height=2160]+bestaudio" --merge-output-format mp4 -S vcodec:"%vcodec%" -S acodec:"%acodec%" --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Video - "%URL%">>"%~dp0log.txt"
 goto l 
  
 :1440 
 title v2.9: Downloading... 
-if "%format%"=="v" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Video" "%vargs%" -f "bestvideo[height=1440]+bestaudio" --merge-output-format mp4 -S vcodec:"%vcodec%" -S acodec:"%acodec%" --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Video - "%URL%">>"%~dp0log.txt"
+if "%format%"=="v" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Video" %vargs% -f "bestvideo[height=1440]+bestaudio" --merge-output-format mp4 -S vcodec:"%vcodec%" -S acodec:"%acodec%" --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Video - "%URL%">>"%~dp0log.txt"
 goto l 
  
 :1080 
 title v2.9: Downloading... 
-if "%format%"=="v" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Video" "%vargs%" -f "bestvideo[height=1080]+bestaudio" --merge-output-format mp4 -S vcodec:"%vcodec%" -S acodec:"%acodec%" --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Video - "%URL%">>"%~dp0log.txt"
+if "%format%"=="v" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Video" %vargs% -f "bestvideo[height=1080]+bestaudio" --merge-output-format mp4 -S vcodec:"%vcodec%" -S acodec:"%acodec%" --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Video - "%URL%">>"%~dp0log.txt"
 goto l 
  
 :720 
 title v2.9: Downloading... 
-if "%format%"=="v" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Video" "%vargs%" -f "bestvideo[height=720]+bestaudio" --merge-output-format mp4 -S vcodec:"%vcodec%" -S acodec:"%acodec%" --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Video - "%URL%">>"%~dp0log.txt"
+if "%format%"=="v" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Video" %vargs% -f "bestvideo[height=720]+bestaudio" --merge-output-format mp4 -S vcodec:"%vcodec%" -S acodec:"%acodec%" --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Video - "%URL%">>"%~dp0log.txt"
 goto l 
  
 :480 
 title v2.9: Downloading... 
-if "%format%"=="v" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Video" "%vargs%" -f "bestvideo[height=480]+bestaudio" --merge-output-format mp4 -S vcodec:"%vcodec%" -S acodec:"%acodec%" --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Video - "%URL%">>"%~dp0log.txt"
+if "%format%"=="v" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Video" %vargs% -f "bestvideo[height=480]+bestaudio" --merge-output-format mp4 -S vcodec:"%vcodec%" -S acodec:"%acodec%" --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Video - "%URL%">>"%~dp0log.txt"
 goto l
 
 cls
@@ -218,9 +218,9 @@ cls
 title v2.9: Downloading...
 
 REM Downloads from the URL input with the file format that the user selected
-if "%format%"=="a" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Audio" "%aargs%" -f "ba/b" -x --audio-format "mp3" -S acodec:"%acodec%" --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Audio - "%URL%">>"%~dp0log.txt"
-if "%format%"=="v" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Video" "%vargs%" -f "bv*[height>=4320]+ba/b[height>=4320] / bv*[height>=2160]+ba/b[height>=2160] / bv*[height>=1440]+ba/b[height>=1440] / bv*[height>=1080]+ba/b[height>=1080] / bv+ba/b" --merge-output-format mp4 -S vcodec:"%vcodec%" -S acodec:"%acodec%" --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Video - "%URL%">>"%~dp0log.txt"
-if "%format%"=="m" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Music" "%margs%" --sponsorblock-remove "music_offtopic" --ppa "ffmpeg:-c:v mjpeg -vf crop=\"'if(gt(ih,iw),iw,ih)':'if(gt(iw,ih),ih,iw)'\"" -f "ba/b" -x --audio-format "flac" -S acodec:"%mcodec%" --embed-metadata  --parse-metadata "%%(title)s:%%(title)s" --parse-metadata "%%(uploader,channel,creator,artist|null)s:%%(uploader)s" --parse-metadata "artist:(?P<meta_album_artist>[^,]+)" --parse-metadata "%%(album_artist,meta_album_artist,uploader)s:%%(album_artist)s" --parse-metadata "%%(release_year,release_date>%%Y,upload_date>%%Y)s:%%(meta_date)s" --parse-metadata "%%(album,title)s:%%(meta_album)s" --embed-thumbnail --convert-thumbnails "jpg" --ppa "thumbnailsconvertor:-qmin 1 -q:v 1" -o "%%(uploader)s - %%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Music - "%URL%">>"%~dp0log.txt"
+if "%format%"=="a" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Audio" %aargs% -f "ba/b" -x --audio-format "mp3" -S acodec:"%acodec%" --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Audio - "%URL%">>"%~dp0log.txt"
+if "%format%"=="v" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Video" %vargs% -f "bv*[height>=4320]+ba/b[height>=4320] / bv*[height>=2160]+ba/b[height>=2160] / bv*[height>=1440]+ba/b[height>=1440] / bv*[height>=1080]+ba/b[height>=1080] / bv+ba/b" --merge-output-format mp4 -S vcodec:"%vcodec%" -S acodec:"%acodec%" --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Video - "%URL%">>"%~dp0log.txt"
+if "%format%"=="m" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Music" %margs% --sponsorblock-remove "music_offtopic" --ppa "ffmpeg:-c:v mjpeg -vf crop=\"'if(gt(ih,iw),iw,ih)':'if(gt(iw,ih),ih,iw)'\"" -f "ba/b" -x --audio-format "flac" -S acodec:"%mcodec%" --embed-metadata  --parse-metadata "%%(title)s:%%(title)s" --parse-metadata "%%(uploader,channel,creator,artist|null)s:%%(uploader)s" --parse-metadata "artist:(?P<meta_album_artist>[^,]+)" --parse-metadata "%%(album_artist,meta_album_artist,uploader)s:%%(album_artist)s" --parse-metadata "%%(release_year,release_date>%%Y,upload_date>%%Y)s:%%(meta_date)s" --parse-metadata "%%(album,title)s:%%(meta_album)s" --embed-thumbnail --convert-thumbnails "jpg" --ppa "thumbnailsconvertor:-qmin 1 -q:v 1" -o "%%(uploader)s - %%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Music - "%URL%">>"%~dp0log.txt"
 goto l
 
 :l
