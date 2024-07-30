@@ -2,7 +2,7 @@
 setlocal
 
 REM Gives the user a warning if update.bat isn't in the EXE folder
-title v2: Dependency check
+title v2.1: Dependency check
 for %%I in (.) do set CurrDirName=%%~nxI
 if NOT "%CurrDirName%" == "EXE" (
   color 04
@@ -16,7 +16,7 @@ if NOT "%CurrDirName%" == "EXE" (
 REM Update selection screen
 :s
 cls
-title v2: Update selection
+title v2.1: Update selection
 
 echo Select what you want to update
 echo (1) YT-dlp
@@ -59,7 +59,7 @@ goto s
 REM Update YT-dlp
 :y
 cls
-title v2: Updating YT-dlp...
+title v2.1: Updating YT-dlp...
 
 yt-dlp.exe -U 
 echo YT-dlp has been updated!
@@ -70,7 +70,10 @@ goto s
 REM Update run.bat
 :r
 cls
-title v2: Updating run.bat...
+title v2.1: Updating run.bat...
+
+echo It is recommended to also update VARS.txt in order to ensure compatability!
+pause
 
 powershell -executionpolicy Bypass -Command "& { Write-Output (Get-Location).Path.Split('\\')[-2] }" > tmp_folder.txt
 if exist tmp_folder.txt (
@@ -94,11 +97,12 @@ if exist tmp_folder.txt (
 REM Give warning before updating VARS.txt
 :v
 cls
-title v2: Warning!
+title v2.1: Warning!
 
 color 04
 echo WARNING: This will overwrite all args and other changes that you've done to VARS.txt!
 echo Default settings may also have changed, which may sometimes be unwanted.
+echo It is recommended to also update run.bat in order to ensure compatability!
 pause
 cls
 color 07
@@ -125,7 +129,7 @@ goto v
 REM Update VARS.txt
 :w
 cls
-title v2: Updating VARS.txt...
+title v2.1: Updating VARS.txt...
 
 echo Creating a backup...
 type VARS.txt > VARS.txt.bak
@@ -140,7 +144,7 @@ goto s
 REM Give warning before updating update.bat 
 :u
 cls
-title v2: Warning!
+title v2.1: Warning!
 
 color 04
 echo OBS: This will cause update.bat to suddenly exit after having updated itself!
@@ -170,7 +174,7 @@ goto u
 REM Update update.bat
 :i
 cls
-title v2: Updating update.bat...
+title v2.1: Updating update.bat...
 
 powershell -executionpolicy Bypass -Command "Invoke-WebRequest -Uri https://github.com/mrblomblo/yt-dlp-usage-script/releases/latest/download/update.bat -OutFile update.bat"
 echo update.bat has been updated!
@@ -180,7 +184,7 @@ goto s
 
 REM End of update script
 :d
-title v2: Exiting...
+title v2.1: Exiting...
 echo Exiting!
 timeout 1 /NOBREAK >NUL
 ENDLOCAL
