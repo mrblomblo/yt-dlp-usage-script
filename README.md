@@ -6,10 +6,10 @@ The supported sites aren't anything that I have control over, but please check [
 If you want to see planned features and other ideas for this project, you can check the [project plan](https://github.com/users/mrblomblo/projects/2) out!
  
 ## Setup (Windows)
-If you prefer video instructions over text (like me), you should watch my [tutorial video](https://www.youtube.com/watch?v=nAeNApj0WGw) on it! The tutorial is on an old version, but the steps listed in it are still applicable.
+If you, like me, prefer video instructions over text instructions; you should watch my [tutorial video](https://www.youtube.com/watch?v=nAeNApj0WGw) on it! The tutorial is on an older version, but the steps listed in it are still applicable for all v2.x(.x) versions.
 1. Create a folder and name it whatever you want, this is where all the files will be (*From now on, I'll call it the main folder*)
 2. Download the [run.bat](https://github.com/mrblomblo/yt-dlp-usage-script/releases/latest/download/run.bat) file and place it in the main folder. *The link auto-downloads the latest Windows version*. If you get a SmartScreen warning; [check the wiki](https://github.com/mrblomblo/yt-dlp-usage-script/wiki/What-to-do-if-you-get-safety-warnings)! 
-3. Run the *run.bat* file. You will see that the script has created five folders, **EXE**, **Downloads**. In the **Downloads** folder it'll have created three folders, **Audio**, **Video** & **Music** . If you get a SmartScreen warning; [check the wiki](https://github.com/mrblomblo/yt-dlp-usage-script/wiki/What-to-do-if-you-get-safety-warnings)!
+3. Run the *run.bat* file. You will see that the script has created five folders, in the main folder you'll see **EXE** and **Downloads**. In the **Downloads** folder it'll have created three folders, **Audio**, **Video** & **Music** . If you get a SmartScreen warning; [check the wiki](https://github.com/mrblomblo/yt-dlp-usage-script/wiki/What-to-do-if-you-get-safety-warnings)!
 4. Download the [VARS.txt](https://github.com/mrblomblo/yt-dlp-usage-script/releases/latest/download/VARS.txt) file from the latest release and place it in your **EXE** folder. *The link auto-downloads the latest Windows version*
 5. Download the latest [YT-DLP FFmpeg build](https://github.com/yt-dlp/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip) and the latest [YT-DLP](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe) versions. *These links auto-download the latest Windows versions*
 6. Unzip the FFmpeg ZIP file, then go into **bin** and move the three files to the **EXE** folder. Now you can delete the FFmpeg folder and the ZIP that you downloaded (The one named *ffmpeg-master-latest-win64-gpl*)
@@ -22,11 +22,11 @@ If you prefer video instructions over text (like me), you should watch my [tutor
 
  <img width="640" src="https://github.com/mrblomblo/yt-dlp-usage-script/assets/63555404/7a71e4bd-4552-49a6-aa84-b891f731d285">
 
- ^^ *EXE folder*
+ ^^ ***EXE** folder*
 
  <img width="640" src="https://github.com/mrblomblo/yt-dlp-usage-script/assets/63555404/4f21140c-5d9b-4fca-96dc-bfb61334a100">
 
- ^^ *Downloads folder*
+ ^^ ***Downloads** folder*
 
 10. Done, now you can try it out!
  
@@ -36,7 +36,7 @@ If you prefer video instructions over text (like me), you should watch my [tutor
 3. Select either audio (mp3) with “a”, video (mp4) with “v”, or music (FLAC) with “m”
 4. YT-DLP should now start downloading the desired content with your choices in mind
 5. If you want to download more, type “y”, otherwise type “n”
-6. If you wanted to download more, the script will restart. If you didn't want to download more, the script will shut down, and the folder that your latest download type was will open
+6. If you want to download more, the script will restart. If you don't want to download more, the script will shut down, and the folder that your latest download type was will open
  
 ## Features
 * Audio downloads (mp3) *(see photo below)*
@@ -51,9 +51,9 @@ If you prefer video instructions over text (like me), you should watch my [tutor
 <img width="640" src="https://github.com/mrblomblo/yt-dlp-usage-script/assets/63555404/01ff747c-0fb3-4870-9c33-03aad84007e6">
 
 * Detection of invalid URL format and invalid user inputs
-* Easy customization with YT-DLP CLI args in VARS.txt (*see Customization*)
-* Easy updates with [update.bat](https://github.com/mrblomblo/yt-dlp-usage-script/releases/latest/download/update.bat)
-* Manual resolution picker (This is disabled by default, but can be enabled in *VARS.txt*)
+* Easy [customization](https://github.com/mrblomblo/yt-dlp-usage-script#customization) with YT-DLP CLI args in VARS.txt (*see Customization*)
+* Easy updates with [update.bat](https://github.com/mrblomblo/yt-dlp-usage-script#updates)
+* Manual resolution picker (*Disabled by default, but can be enabled in VARS.txt*)
 
 **NOTE:** The FLAC files that get downloaded with this script are most likely not going to be “true" FLACs, since they get re-encoded from (most likely) M4A or OPUS.
 It does however sound marginally better than the regular mp3 file that you get from the script, but that may just be a placebo.
@@ -68,27 +68,31 @@ If you want to customize the script, you can edit the *VARS.txt* file. There you
 * vargs:--embed-chapters
 * margs:
  
-The first three are for the codecs the script uses when downloading the content. The last three are extra args for YT-DLP to use when downloading the content.
-Please only change these if you know what you are doing! I cannot guarantee that I will be able to give support if something goes wrong and you've changed these.
+The first three are for the codecs the script uses when downloading the content. The last three are extra args for YT-DLP to use when downloading the content. *reschooser* allows you to manually select the resolution of the downloaded video.
+
+Please only change these if you know what you are doing! I cannot guarantee that I will be able to give support if something goes wrong and you've changed these. 
+
+**Tip:** *Change the changed vars and args back to their default values and see if the issue persists!*
 
 I will **NOT** give support to you if you have changed anything in *run.bat* or *update.bat*, or if you are using another person's version of my script(s).
 
 ### Troubleshooting
-If you're having problems; please [check the wiki](https://github.com/mrblomblo/yt-dlp-usage-script/wiki/Troubleshooting)!
+If you're having problems; please [check the wiki](https://github.com/mrblomblo/yt-dlp-usage-script/wiki/Troubleshooting) before creating an issue or writing a comment on the tutorial video!
 
 ## Updates
 If you want to easily download updates, you can use [update.bat](https://github.com/mrblomblo/yt-dlp-usage-script/releases/latest/download/update.bat).
 
+To use it; download it and place it in the **EXE** folder.
 When you use launch it, you'll see a menu which allows you to choose what you want to update. As of now, the available choices are:
 * YT-dlp
 * run.bat
-* VARS.txt (overwrites your args & choices)
+* VARS.txt (overwrites your args & choices, but creates a backup)
 * update.bat (itself)
 
 It features error checks and dependency checks just like *run.bat*, as well as warnings for updating *VARS.txt* and itself in order to make it as easy as possible to use!
 I also made it so that it creates a backup of *VARS.txt* when you choose to update it, since it overwrites it during the update process!
 
-Keep in mind that it isn't guaranteed that an update has been released, so use it sparingly.
+Keep in mind that it isn't guaranteed that an update has been released, so use it sparingly in order to lessen the load on the file hosts.
 
 ## Why did I create this?
 When I first started using YT-DLP, I found it a bit cumbersome, as manually entering all the details every time I wanted to use it was annoying and time-consuming.
@@ -100,18 +104,21 @@ I therefore created version 2 to make the setup process easier and to provide a 
  
 ## Disclaimer
 This script is a wrapper for YT-DLP, a command-line tool for downloading videos. What you do with the downloaded content is up to you, but please use it responsibly and legally. Downloading copyrighted content without permission is illegal.
-This script is intended for personal use, and for downloading content that is freely available online. I am not responsible for any misuse of this script or the downloaded content. The script itself is also unable to actually download the videos, that part is handled by YT-DLP.
+This script is intended for personal use, and for downloading content that is freely available online. I am not responsible for any misuse of this script or the downloaded content. The script itself is unable to download the videos itself, that part is handled by YT-DLP.
 This script is provided “as is” without warranty of any kind.
 
 This script is licensed under the Unlicense license, so I don't expect you to follow this. But for moral reasons; please don't turn the script into malware or anything like that. Though, as the license states, you are free to do whatever you want with it.
  
  
 ## Credits
+The following people, groups, projects, AIs, etc. have had a hand in making this project better. I may have either used entire code blocks or snippets of code that they've written, or I may have taken inspiration from their code. 
+They may also have helped debug problems, given me ideas for features, fixes, etc. whether they know it or not:
+
 * Usage of *%~dp0* in the script - [AUTOMATIC1111 Stable Diffusion web UI](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
-* Loading the *VARS.txt* file in to the *run.bat* file - [https://stackoverflow.com/a/66714820](https://stackoverflow.com/a/66714820)
+* Loading the *VARS.txt* file in to the *run.bat* file - [Erik Erikson](https://stackoverflow.com/a/66714820)
 * Most of the args used for the music command - [YTDLnis](https://github.com/deniscerri/ytdlnis)
 * URL check - [Google Gemini](https://gemini.google.com)
 * Improved dependency check - [Google Gemini](https://gemini.google.com)
 * Help with troubleshooting VARS.txt not loading properly - [Microsoft Copilot](https://copilot.microsoft.com/)
 * Discovery that lead to a bug being fixed - [FrostyMangg](https://www.youtube.com/@FrostyMangg)
-* Getting the current directory (for update.bat) - [https://superuser.com/a/160712](https://superuser.com/a/160712)
+* Getting the current directory (for update.bat) - [Tamara Wijsman](https://superuser.com/a/160712)
