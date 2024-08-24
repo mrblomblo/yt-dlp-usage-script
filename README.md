@@ -76,6 +76,12 @@ Please only change these if you know what you are doing! I cannot guarantee that
 
 I will **NOT** give support to you if you have changed anything in *run.bat* or *update.bat*, or if you are using another person's version of my script(s).
 
+If you, for example, want to download a video in a resolution that you have to be logged in to a site to view; you'll most likely not be able to download the video in that resolution without adding *--cookies-from-browser **your-browser*** to *vargs*
+
+It'd look like this if you are a chrome user:
+
+vargs:--embed-chapters --cookies-from-browser chrome
+
 ### Troubleshooting
 If you're having problems; please [check the wiki](https://github.com/mrblomblo/yt-dlp-usage-script/wiki/Troubleshooting) before creating an issue or writing a comment on the tutorial video!
 
