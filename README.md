@@ -128,3 +128,4 @@ They may also have helped debug problems, given me ideas for features, fixes, et
 * Help with troubleshooting VARS.txt not loading properly - [Microsoft Copilot](https://copilot.microsoft.com/)
 * Discovery that lead to a bug being fixed - [FrostyMangg](https://www.youtube.com/@FrostyMangg)
 * Getting the current directory (for update.bat) - [Tamara Wijsman](https://superuser.com/a/160712)
+* Discovering a safety warning & providing the image for the wiki - [Z.N Gaming](https://www.youtube.com/@z.ngaming2681)
