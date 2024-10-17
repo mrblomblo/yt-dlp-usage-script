@@ -4,6 +4,8 @@ This script is made to make usage of YT-DLP easier. It is based on [version 1](h
 The supported sites aren't anything that I have control over, but please check [here](https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md) to see which sites YT-DLP can download from. (May contain names of NSFW/L websites)
 
 If you want to see planned features and other ideas for this project, you can check the [project plan](https://github.com/users/mrblomblo/projects/2) out!
+
+**IMPORTANT NOTE:** I am in the process of switching to Linux, so the next release will *very* likely be the last one. I won't make any promises, but I am toying with the idea of making a version for Linux. In case I do make a Linux version, it will be released under another repo, which will be linked here.
  
 ## Setup (Windows)
 If you, like me, prefer video instructions over text instructions; you should watch my [tutorial video](https://www.youtube.com/watch?v=nAeNApj0WGw) on it! The tutorial is on an older version, but the steps listed in it are still applicable for all v2.x(.x) versions.
