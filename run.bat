@@ -2,7 +2,7 @@
 setlocal enabledelayedexpansion
 
 REM Start of dependency check
-title v2.9.1 : Dependency check
+title v2.10: Dependency check
 
 REM Checks if necesssary folders exist and creates them if they don't exist
 for %%d in (EXE Downloads Downloads\Audio Downloads\Video Downloads\Music) do (
@@ -30,26 +30,27 @@ REM End of dependency check
 cls
 
 REM Loading of VARS.txt
-
 for /f "usebackq tokens=1,* delims=:" %%A in ("%~dp0EXE\VARS.txt") do (
-    set "key=%%A"
-    set "value=%%B"
-    REM Set the variables to the ones in VARS.txt
-    if "!key!"=="acodec" set "acodec=!value!"
-    if "!key!"=="vcodec" set "vcodec=!value!"
-    if "!key!"=="mcodec" set "mcodec=!value!"
-    if "!key!"=="reschooser" set "reschooser=!value!"
-    if "!key!"=="aargs" set "aargs=!value!"
-    if "!key!"=="vargs" set "vargs=!value!"
-    if "!key!"=="margs" set "margs=!value!"
+  set "key=%%A"
+  set "value=%%B"
+  REM Set the variables to the ones in VARS.txt
+  if "!key!"=="acodec" set "acodec=!value!"
+  if "!key!"=="vcodec" set "vcodec=!value!"
+  if "!key!"=="mcodec" set "mcodec=!value!"
+  if "!key!"=="alocation" set "alocation=!value!"
+  if "!key!"=="vlocation" set "vlocation=!value!"
+  if "!key!"=="mlocation" set "mlocation=!value!"
+  if "!key!"=="reschooser" set "reschooser=!value!"
+  if "!key!"=="aargs" set "aargs=!value!"
+  if "!key!"=="vargs" set "vargs=!value!"
+  if "!key!"=="margs" set "margs=!value!"
 )
 
 :s
 
-title v2.9.1 : Enter URL to Download
+title v2.10: Enter URL to Download
 
 REM User input for URL
-
 set /p "URL=URL: "
 
 REM Gives the user a warning if the URL input was empty
@@ -62,6 +63,7 @@ if "%URL%"=="" (
   color 07
   goto s
 )
+
 REM Gives the user a warning if the URL input doesn't contain "http", "https" or "www"
 if NOT "%URL:~0,4%"=="http" if NOT "%URL:~0,5%"=="https" ( 
   if NOT "%URL:~0,4%"=="www" (
@@ -77,7 +79,7 @@ if NOT "%URL:~0,4%"=="http" if NOT "%URL:~0,5%"=="https" (
 
 cls
 
-title v2.9.1 : Enter File Format
+title v2.10: Enter File Format
 
 :a
 
@@ -100,7 +102,7 @@ if "%reschooser%"=="yes" if "%format%"=="v" (
   REM Resolution selection screen
   :s2
   cls
-  title v2.9.1 : Resolution selection
+  title v2.10: Resolution selection
 
   echo Select which resolution you wish to download.
   echo It will fail if the selected resolution isn't available.
@@ -184,50 +186,53 @@ if NOT "%format%"=="a" OR "%format%"=="v" OR "%format%"=="m" (
 cls
 
 :8k
-title v2.9.1 : Downloading...
-if "%format%"=="v" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Video" %vargs% -f "bestvideo[height=4320]+bestaudio" --merge-output-format mp4 -S vcodec:"%vcodec%" -S acodec:"%acodec%" --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Video - "%URL%">>"%~dp0log.txt"
+title v2.10: Downloading...
+if "%format%"=="v" "%~dp0EXE\yt-dlp.exe" -P "%vlocation%" %vargs% -f "bestvideo[height=4320]+bestaudio" --merge-output-format mp4 -S vcodec:"%vcodec%" -S acodec:"%acodec%" -o "%%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Video - "%URL%" in %vlocation%>>"%~dp0log.txt"
 goto l 
  
 :4k 
-title v2.9.1 : Downloading... 
-if "%format%"=="v" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Video" %vargs% -f "bestvideo[height=2160]+bestaudio" --merge-output-format mp4 -S vcodec:"%vcodec%" -S acodec:"%acodec%" --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Video - "%URL%">>"%~dp0log.txt"
+title v2.10: Downloading... 
+if "%format%"=="v" "%~dp0EXE\yt-dlp.exe" -P "%vlocation%" %vargs% -f "bestvideo[height=2160]+bestaudio" --merge-output-format mp4 -S vcodec:"%vcodec%" -S acodec:"%acodec%" -o "%%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Video - "%URL% in %vlocation%>>"%~dp0log.txt"
 goto l 
  
 :1440 
-title v2.9.1 : Downloading... 
-if "%format%"=="v" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Video" %vargs% -f "bestvideo[height=1440]+bestaudio" --merge-output-format mp4 -S vcodec:"%vcodec%" -S acodec:"%acodec%" --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Video - "%URL%">>"%~dp0log.txt"
+title v2.10: Downloading... 
+if "%format%"=="v" "%~dp0EXE\yt-dlp.exe" -P "%vlocation%" %vargs% -f "bestvideo[height=1440]+bestaudio" --merge-output-format mp4 -S vcodec:"%vcodec%" -S acodec:"%acodec%" -o "%%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Video - "%URL% in %vlocation%>>"%~dp0log.txt"
 goto l 
  
 :1080 
-title v2.9.1 : Downloading... 
-if "%format%"=="v" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Video" %vargs% -f "bestvideo[height=1080]+bestaudio" --merge-output-format mp4 -S vcodec:"%vcodec%" -S acodec:"%acodec%" --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Video - "%URL%">>"%~dp0log.txt"
+title v2.10: Downloading... 
+if "%format%"=="v" "%~dp0EXE\yt-dlp.exe" -P "%vlocation%" %vargs% -f "bestvideo[height=1080]+bestaudio" --merge-output-format mp4 -S vcodec:"%vcodec%" -S acodec:"%acodec%" -o "%%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Video - "%URL% in %vlocation%>>"%~dp0log.txt"
 goto l 
  
 :720 
-title v2.9.1 : Downloading... 
-if "%format%"=="v" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Video" %vargs% -f "bestvideo[height=720]+bestaudio" --merge-output-format mp4 -S vcodec:"%vcodec%" -S acodec:"%acodec%" --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Video - "%URL%">>"%~dp0log.txt"
+title v2.10: Downloading... 
+if "%format%"=="v" "%~dp0EXE\yt-dlp.exe" -P "%vlocation%" %vargs% -f "bestvideo[height=720]+bestaudio" --merge-output-format mp4 -S vcodec:"%vcodec%" -S acodec:"%acodec%" -o "%%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Video - "%URL%" in %vlocation%>"%~dp0log.txt"
 goto l 
  
 :480 
-title v2.9.1 : Downloading... 
-if "%format%"=="v" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Video" %vargs% -f "bestvideo[height=480]+bestaudio" --merge-output-format mp4 -S vcodec:"%vcodec%" -S acodec:"%acodec%" --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Video - "%URL%">>"%~dp0log.txt"
+title v2.10: Downloading... 
+if "%format%"=="v" "%~dp0EXE\yt-dlp.exe" -P "%vlocation%" %vargs% -f "bestvideo[height=480]+bestaudio" --merge-output-format mp4 -S vcodec:"%vcodec%" -S acodec:"%acodec%" -o "%%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Video - "%URL%" in %vlocation%>"%~dp0log.txt"
 goto l
 
 cls
 :d
-title v2.9.1 : Downloading...
+title v2.10: Downloading...
 
 REM Downloads from the URL input with the file format that the user selected
-if "%format%"=="a" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Audio" %aargs% -f "ba/b" -x --audio-format "mp3" -S acodec:"%acodec%" --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Audio - "%URL%">>"%~dp0log.txt"
-if "%format%"=="v" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Video" %vargs% -f "bv*[height>=4320]+ba/b[height>=4320] / bv*[height>=2160]+ba/b[height>=2160] / bv*[height>=1440]+ba/b[height>=1440] / bv*[height>=1080]+ba/b[height>=1080] / bv+ba/b" --merge-output-format mp4 -S vcodec:"%vcodec%" -S acodec:"%acodec%" --embed-metadata --embed-thumbnail -o "%%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Video - "%URL%">>"%~dp0log.txt"
-if "%format%"=="m" "%~dp0EXE\yt-dlp.exe" -P "%~dp0Downloads\Music" %margs% --sponsorblock-remove "music_offtopic" --ppa "ffmpeg:-c:v mjpeg -vf crop=\"'if(gt(ih,iw),iw,ih)':'if(gt(iw,ih),ih,iw)'\"" -f "ba/b" -x --audio-format "flac" -S acodec:"%mcodec%" --embed-metadata  --parse-metadata "%%(title)s:%%(title)s" --parse-metadata "%%(uploader,channel,creator,artist|null)s:%%(uploader)s" --parse-metadata "artist:(?P<meta_album_artist>[^,]+)" --parse-metadata "%%(album_artist,meta_album_artist,uploader)s:%%(album_artist)s" --parse-metadata "%%(release_year,release_date>%%Y,upload_date>%%Y)s:%%(meta_date)s" --parse-metadata "%%(album,title)s:%%(meta_album)s" --embed-thumbnail --convert-thumbnails "jpg" --ppa "thumbnailsconvertor:-qmin 1 -q:v 1" -o "%%(uploader)s - %%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Music - "%URL%">>"%~dp0log.txt"
+if "%format%"=="a" "%~dp0EXE\yt-dlp.exe" -P "%alocation%" %aargs% -f "ba/b" -x --audio-format "mp3" -S acodec:"%acodec%" -o "%%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Audio - "%URL%" in %alocation%>>"%~dp0log.txt"
+
+if "%format%"=="v" "%~dp0EXE\yt-dlp.exe" -P "%vlocation%" %vargs% -f "bv*[height>=4320]+ba/b[height>=4320] / bv*[height>=2160]+ba/b[height>=2160] / bv*[height>=1440]+ba/b[height>=1440] / bv*[height>=1080]+ba/b[height>=1080] / bv+ba/b" --merge-output-format mp4 -S vcodec:"%vcodec%" -S acodec:"%acodec%" -o "%%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Video - "%URL%" in %vlocation%>>"%~dp0log.txt"
+
+if "%format%"=="m" "%~dp0EXE\yt-dlp.exe" -P "%mlocation%" %margs% --ppa "ffmpeg:-c:v mjpeg -vf crop=\"'if(gt(ih,iw),iw,ih)':'if(gt(iw,ih),ih,iw)'\"" -f "ba/b" -x --audio-format "flac" -S acodec:"%mcodec%" --embed-metadata  --parse-metadata "%%(title)s:%%(title)s" --parse-metadata "%%(uploader,channel,creator,artist|null)s:%%(uploader)s" --parse-metadata "artist:(?P<meta_album_artist>[^,]+)" --parse-metadata "%%(album_artist,meta_album_artist,uploader)s:%%(album_artist)s" --parse-metadata "%%(release_year,release_date>%%Y,upload_date>%%Y)s:%%(meta_date)s" --parse-metadata "%%(album,title)s:%%(meta_album)s" --embed-thumbnail --convert-thumbnails "jpg" --ppa "thumbnailsconvertor:-qmin 1 -q:v 1" -o "%%(uploader)s - %%(title)s.%%(ext)s" -w "%URL%" && @echo %date%: Music - "%URL%" in %mlocation%>>"%~dp0log.txt"
+
 goto l
 
 :l
 
 cls
 
-title v2.9.1 : Download more?
+title v2.10: Download more?
 
 REM User input for if they want to download more
 set /p "more=Do you want to download more? Yes (y) or No (n): "
@@ -264,7 +269,7 @@ if NOT "%more%"=="y" OR if NOT "%more%"=="n" (
 
 :e
 REM Part of the script that the dependency check skips to
-title v2.9.1 : Dependency check
+title v2.10: Dependency check
 pause
 
 cls
@@ -272,14 +277,14 @@ cls
 :b
 
 REM Opens the corresponding downloads folder depending on which file format the user chose
-if "%format%"=="m" (
-  explorer "%~dp0Downloads\Music"
-)
 if "%format%"=="a" (
-  explorer "%~dp0Downloads\Audio"
+  explorer "%alocation%"
 )
 if "%format%"=="v" (
-  explorer "%~dp0Downloads\Video"
+  explorer "%vlocation%"
+)
+if "%format%"=="m" (
+  explorer "%mlocation%"
 )
 
 REM Stops the script
