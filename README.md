@@ -65,24 +65,27 @@ If you want to customize the script, you can edit the *VARS.txt* file. There you
 * acodec:mp3
 * vcodec:h264
 * mcodec:flac
+* alocation:Downloads\Audio
+* vlocation:Downloads\Video
+* mlocation:Downloads\Music
 * reschooser:no
-* aargs:--embed-chapters
-* vargs:--embed-chapters
-* margs:
+* aargs:--embed-chapters --embed-metadata --embed-thumbnail
+* vargs:--embed-chapters --embed-metadata --embed-thumbnail
+* margs: --sponsorblock-remove "music_offtopic"
  
-The first three are for the codecs the script uses when downloading the content. The last three are extra args for YT-DLP to use when downloading the content. *reschooser* allows you to manually select the resolution of the downloaded video.
+The three "\*codec" ones are for the codecs the script uses when downloading the content. The three "\*args" ones are extra args for YT-DLP to use when downloading the content. The three "\*location" ones are for changing the download location. *reschooser* allows you to manually select the resolution of the downloaded video. 
 
 Please only change these if you know what you are doing! I cannot guarantee that I will be able to give support if something goes wrong and you've changed these. 
 
 **Tip:** *Change the changed vars and args back to their default values and see if the issue persists!*
 
-I will **NOT** give support to you if you have changed anything in *run.bat* or *update.bat*, or if you are using another person's version of my script(s).
+I will **NOT** give support to you if you have changed anything in *run.bat* or *update.bat*, or if you are using a fork of my script(s).
 
 If you, for example, want to download a video in a resolution that you have to be logged in to a site to view; you'll most likely not be able to download the video in that resolution without adding *--cookies-from-browser **your-browser*** to *vargs*
 
 It'd look like this if you are a chrome user:
 
-vargs:--embed-chapters --cookies-from-browser chrome
+vargs:--embed-chapters --embed-metadata --embed-thumbnail --cookies-from-browser chrome
 
 ### Troubleshooting
 If you're having problems; please [check the wiki](https://github.com/mrblomblo/yt-dlp-usage-script/wiki/Troubleshooting) before creating an issue or writing a comment on the tutorial video!
