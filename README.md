@@ -53,7 +53,7 @@ If you, like me, prefer video instructions over text instructions; you should wa
 <img width="640" src="https://github.com/mrblomblo/yt-dlp-usage-script/assets/63555404/01ff747c-0fb3-4870-9c33-03aad84007e6">
 
 * Detection of invalid URL format and invalid user inputs
-* Easy [customization](https://github.com/mrblomblo/yt-dlp-usage-script#customization) with YT-DLP CLI args in VARS.txt (*see Customization*)
+* Easy [customization](https://github.com/mrblomblo/yt-dlp-usage-script#customization) with YT-DLP CLI args in VARS.txt
 * Easy updates with [update.bat](https://github.com/mrblomblo/yt-dlp-usage-script#updates)
 * Manual resolution picker (*Disabled by default, but can be enabled in VARS.txt*)
 
@@ -81,7 +81,7 @@ Please only change these if you know what you are doing! I cannot guarantee that
 
 I will **NOT** give support to you if you have changed anything in *run.bat* or *update.bat*, or if you are using a fork of my script(s).
 
-If you, for example, want to download a video in a resolution that you have to be logged in to a site to view; you'll most likely not be able to download the video in that resolution without adding *--cookies-from-browser **your-browser*** to *vargs*
+If you, for example, want to download paid or otherwise account-required content; you'll most likely not be able to download the content without adding *--cookies-from-browser **your-browser*** to *vargs*
 
 It'd look like this if you are a chrome user:
 
