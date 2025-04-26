@@ -87,9 +87,6 @@ It'd look like this if you are a chrome user:
 
 vargs:--embed-chapters --embed-metadata --embed-thumbnail --cookies-from-browser chrome
 
-### Troubleshooting
-If you're having problems; please [check the wiki](https://github.com/mrblomblo/yt-dlp-usage-script/wiki/Troubleshooting) before creating an issue or writing a comment on the tutorial video!
-
 ## Updates
 If you want to easily download updates, you can use [update.bat](https://github.com/mrblomblo/yt-dlp-usage-script/releases/latest/download/update.bat).
 
@@ -111,8 +108,14 @@ This project was originally developed for my private use, but I decided to relea
 
 The initial public version ([version 1](https://github.com/mrblomblo/yt-dlp-usage-script/releases/tag/Legacy)), although better than the bare-bones YT-DLP experience, was difficult to set up, and was easy to mess up as well as being a bit “featureless” in my eyes.
 
-I therefore created version 2 to make the setup process easier and to provide a more streamlined and easy-to-use experience. 
- 
+I therefore created version 2 to make the setup process easier and to provide a more streamlined and easy-to-use experience.
+
+## Known Issues
+- **Run.bat** | *reschooser* — You are shown the error "Error: Invalid input. This was most likely a false positive, ignore it and try again" even if you have selected a valid input. When you select a valid input again, it does not show the error.
+
+### Troubleshooting
+If you're having problems; please [check the wiki](https://github.com/mrblomblo/yt-dlp-usage-script/wiki/Troubleshooting) before creating an issue or writing a comment on the tutorial video!
+
 ## Disclaimer
 This script is a wrapper for YT-DLP, a command-line tool for downloading videos. What you do with the downloaded content is up to you, but please use it responsibly and legally. Downloading copyrighted content without permission is illegal.
 This script is intended for personal use, and for downloading content that is freely available online. I am not responsible for any misuse of this script or the downloaded content. The script itself is unable to download the videos itself, that part is handled by YT-DLP.
