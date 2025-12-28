@@ -1,5 +1,5 @@
 > [!NOTE]
-> **TL;DR: This project is currently not under development.**
+> **TL;DR: This project is currently not under active development.**
 > 
 > I have switched to Linux, which means that the latest version (2.10.x) is likely going to be the last Windows version. That is due to *bat* files being Windows-only, making development and testing difficult. I won't make any promises, but I am toying with the idea of making a version for Linux. In case I do make a Linux version, it will be released under another repo or branch, which will be linked here.
 
@@ -114,7 +114,7 @@ The initial public version ([version 1](https://github.com/mrblomblo/yt-dlp-usag
 I therefore created version 2 to make the setup process easier and to provide a more streamlined and easy-to-use experience.
 
 ## Known Issues
-- **Run.bat** | *reschooser* — You are shown the error "Error: Invalid input. This was most likely a false positive, ignore it and try again" even if you have selected a valid input. When you select a valid input again, it does not show the error.
+- Currently none
 
 ### Troubleshooting
 If you're having problems; please [check the wiki](https://github.com/mrblomblo/yt-dlp-usage-script/wiki/Troubleshooting) before creating an issue or writing a comment on the tutorial video!
